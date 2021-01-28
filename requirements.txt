@@ -42,3 +42,4 @@ Werkzeug==0.16.0
 wkhtmltopdf==0.2
 WTForms==2.3.3
 WTForms-Components==0.10.4
+git+git://github.com/johnfraney/wkhtmltopdf-pack.git
