@@ -774,7 +774,7 @@ def cr_test(id):
         flash('You have successfully edited the Ticket.')
 
         # redirect to the tickets page
-        html = render_template('admin/cr.html',m=m._repr_html_(),nb_intervention3=nb_intervention3,nb_intervention1=nb_intervention1,nb_intervention2=nb_intervention2, nature=nature, telephone1=telephone1, telephone2=telephone2, telephone3=telephone3,  t0=ticket.heure_creation.time(),ticket=ticket,nom1=nom1,specialisation1=specialisation1,entreprise1=entreprise1,mail1=mail1,nom2=nom2,specialisation2=specialisation2,entreprise2=entreprise2,mail2=mail2,nom3=nom3,specialisation3=specialisation3,entreprise3=entreprise3,mail3=mail3,techno=techno,constructeur=constructeur,equipement=equipement,raison=raison,solution=solution)
+        #html = render_template('admin/cr.html',m=m._repr_html_(),nb_intervention3=nb_intervention3,nb_intervention1=nb_intervention1,nb_intervention2=nb_intervention2, nature=nature, telephone1=telephone1, telephone2=telephone2, telephone3=telephone3,  t0=ticket.heure_creation.time(),ticket=ticket,nom1=nom1,specialisation1=specialisation1,entreprise1=entreprise1,mail1=mail1,nom2=nom2,specialisation2=specialisation2,entreprise2=entreprise2,mail2=mail2,nom3=nom3,specialisation3=specialisation3,entreprise3=entreprise3,mail3=mail3,techno=techno,constructeur=constructeur,equipement=equipement,raison=raison,solution=solution)
         
         
       
@@ -788,8 +788,7 @@ def cr_test(id):
                 pdfkit_config = pdfkit.configuration(wkhtmltopdf=WKHTMLTOPDF_CMD)
         
 
-        pdf=pdfkit.from_string(html,False,configuration=pdfkit_config)
-        pdf = pdfkit.from_string(html, False,configuration=pdfkit_config)
+        pdf=pdfkit.from_string("hohohoho",False,configuration=pdfkit_config)
         response = make_response(pdf)
         response.headers["Content-Type"] = "cr/pdf"
 
