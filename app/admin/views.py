@@ -620,19 +620,19 @@ def map_ticket():
 
     #position des intervention
       for ticket in tickets:
-        
+
         if ticket.statut == "Non traité":
 
-            folium.Marker(
-                location=[ticket.la,ticket.lng],
-                popup="<i>Pas encore pris en charge </i>",
-                tooltip="Intervention",
-                icon=folium.Icon(color='red')
-            ).add_to(m)
+                folium.Marker(
+                    location=[ticket.la,ticket.lng],
+                    popup="<i>Pas encore pris en charge </i>",
+                    tooltip="Intervention",
+                    icon=folium.Icon(color='red')
+                ).add_to(m)
 
         else:
             if ticket.statut == "Gelé":
-                folium.Marker(
+                olium.Marker(
                 location=[ticket.la,ticket.lng],
                 popup="<i>Ticket gelé </i>",
                 tooltip="Click here",
@@ -642,7 +642,7 @@ def map_ticket():
             else:
 
                 if  ticket.statut == "Intervention en cours":
-                
+                    
                     folium.Marker(
                     location=[ticket.la,ticket.lng],
                     popup="<i>Intervention en cours </i>",
@@ -651,6 +651,7 @@ def map_ticket():
                     ).add_to(m)
 
                 else:
+
                     if ticket.statut == "Pris en charge":
 
                         folium.Marker(
@@ -658,17 +659,17 @@ def map_ticket():
                         popup="<i>Technicien en route</i>",
                         tooltip="Click here",
                         icon=folium.Icon(prefix='fa', icon='exclamation',color='lightred')
-                            ).add_to(m)
+                        ).add_to(m)
 
                     else:
 
                         if ticket.statut == "Terminé":
                             folium.Marker(
-                                location=[ticket.la,ticket.lng],
-                                popup="<i>Intervention en cours </i>",
-                                tooltip="Click here",
-                                icon=folium.Icon(prefix='fa', icon='exclamation',color='green')
-                                ).add_to(m)
+                            location=[ticket.la,ticket.lng],
+                            popup="<i>Intervention en cours </i>",
+                            tooltip="Click here",
+                            icon=folium.Icon(prefix='fa', icon='exclamation',color='green')
+                            ).add_to(m)
 
 
 
