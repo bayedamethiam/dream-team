@@ -660,6 +660,15 @@ def cil_test():
     return render_template('admin/cr.html')
 
 
+@admin.route('test//test/', methods=['GET', 'POST'])
+def test():
+
+
+   
+    return "hello world"
+
+
+            
             
 
 
