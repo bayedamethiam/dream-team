@@ -283,10 +283,11 @@ def list_tickets():
     tickets = Ticket.query.all()
 
     nb_ticket=Ticket.objects.values('id').annotate(nb_ticket=Count('id'))
-    nb_ticket_cours=Ticket.objects.filter(statut="Intervention en cours").annotate(nb_ticket_cours=Count('id'))
-    nb_ticket_gelé=Ticket.objects.filter(statut="Gelé").annotate(nb_ticket_cours=Count('id'))
-    nb_ticket_termine=Ticket.objects.filter(statut="Terminé").annotate(nb_ticket_cours=Count('id'))
+    nb_ticket_cours=Ticket.objects.filter(statut="Intervention en cours").values('statut').annotate(nb_ticket_cours=Count('id'))
+    nb_ticket_gelé=Ticket.objects.filter(statut="Gelé").values('statut').annotate(nb_ticket_cours=Count('id'))
+    nb_ticket_termine=Ticket.objects.filter(statut="Terminé").values('statut').annotate(nb_ticket_cours=Count('id'))
     
+
 
 
 
