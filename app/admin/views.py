@@ -777,7 +777,7 @@ def cr_test(id):
         
         
       
-       pdfkit_config=None
+        pdfkit_config=None
         if platform.system() == "Windows":
                 pdfkit_config = pdfkit.configuration(wkhtmltopdf=os.environ.get('WKHTMLTOPDF_BINARY', 'C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe'))
         else:
@@ -791,7 +791,7 @@ def cr_test(id):
         pdf = pdfkit.from_string(html, False,configuration=pdfkit_config)
         response = make_response(pdf)
         response.headers["Content-Type"] = "cr/pdf"
-        
+
         response.headers["Content-Disposition"] = "inline; filename=ticke.pdf"
         return response
         
