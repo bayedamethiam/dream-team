@@ -10,7 +10,7 @@ from ..models import Department, Role, Employee
 from ..models import Cil,Ticket,Cr,Equipement
 import folium
 import smtplib
-
+from sqlalchemy import func
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 # app/admin/views.py
@@ -274,29 +274,27 @@ def assign_employee(id):
 @admin.route('/tickets', methods=['GET', 'POST'])
 @login_required
 def list_tickets():
-    """
-    List all tickets
-    """
+   
     
     
 
+   
     tickets = Ticket.query.all()
-    
-    nb_ticket=db.session.query(func.count(Ticket.id))..all()
-    
-    nb_ticket_cours=db.session.query(func.count(Ticket.id)).filter(Ticket.statut.like("Intervention en cours").all()
 
-    nb_ticket_gelé=db.session.query(func.count(Ticket.id)).filter(Ticket.statut.like("Gelé"),.all()
+    nb_ticket=db.session.query(func.count(Ticket.id)).all()
+    nb_ticket=str(nb_ticket[0]).replace("(","").replace(")","").replace(",","")
 
-    nb_ticket_termine=db.session.query(func.count(Ticket.id)).filter(Ticket.statut.like("Terminé").all()
-    
+    nb_ticket_cours=db.session.query(func.count(Ticket.id)).filter(Ticket.statut.like("Intervention en cours")).all()
+    nb_ticket_cours=str(nb_ticket_cours[0]).replace("(","").replace(")","").replace(",","")
+  
+    nb_ticket_gelé=db.session.query(func.count(Ticket.id)).filter(Ticket.statut.like("Gelé")).all()
+    nb_ticket_gelé=str(nb_ticket_gelé[0]).replace("(","").replace(")","").replace(",","")
+  
+    nb_ticket_terminé=db.session.query(func.count(Ticket.id)).filter(Ticket.statut.like("Terminé")).all()
+    nb_ticket_terminé=str(nb_ticket_terminé[0]).replace("(","").replace(")","").replace(",","")
+  
 
-
-
-
-    return render_template('admin/tickets.html',
-                           tickets=tickets, title="Tickets" , nom=current_user.last_name,nb_ticket=nb_ticket,nb_ticket_cours=nb_ticket_cours,nb_ticket_gelé=nb_ticket_gelé,nb_ticket_termine=nb_ticket_termine)
-
+    return render_template('admin/tickets.html',tickets=tickets, title="Tickets" , nom=current_user.last_name,nb_ticket=nb_ticket,nb_ticket_cours=nb_ticket_cours,nb_ticket_gelé=nb_ticket_gelé,nb_ticket_terminé=nb_ticket_terminé)
 
 
 @admin.route('/tickets/admin', methods=['GET', 'POST'])
