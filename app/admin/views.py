@@ -788,13 +788,12 @@ def cr_test(id):
                 pdfkit_config = pdfkit.configuration(wkhtmltopdf=WKHTMLTOPDF_CMD)
         
 
-        #pdf=pdfkit.from_string(html,False,configuration=pdfkit_config)
-        #pdf = pdfkit.from_string(html, False,configuration=pdfkit_config)
-        pdfkit.from_url("http://www.micropyramid.com","test.pdf",configuration=pdfkit_config)
-        #response = make_response(pdf)
-        #response.headers["Content-Type"] = "cr/pdf"
+        pdf=pdfkit.from_string(html,False,configuration=pdfkit_config)
+        pdf = pdfkit.from_string(html, False,configuration=pdfkit_config)
+        response = make_response(pdf)
+        response.headers["Content-Type"] = "cr/pdf"
 
-        #response.headers["Content-Disposition"] = "inline; filename=ticke.pdf"
+        response.headers["Content-Disposition"] = "inline; filename=ticke.pdf"
         return "succes"
         
 
