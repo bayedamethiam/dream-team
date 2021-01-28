@@ -777,12 +777,21 @@ def cr_test(id):
         
         
       
-      
-        pdf=pdfkit.from_string(html,False)
-        pdf = pdfkit.from_string(html, False)
+       pdfkit_config=None
+        if platform.system() == "Windows":
+                pdfkit_config = pdfkit.configuration(wkhtmltopdf=os.environ.get('WKHTMLTOPDF_BINARY', 'C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe'))
+        else:
+                os.environ['PATH'] += os.pathsep + os.path.dirname(sys.executable) 
+                WKHTMLTOPDF_CMD = subprocess.Popen(['which', os.environ.get('WKHTMLTOPDF_BINARY', 'wkhtmltopdf')], 
+                    stdout=subprocess.PIPE).communicate()[0].strip()
+                pdfkit_config = pdfkit.configuration(wkhtmltopdf=WKHTMLTOPDF_CMD)
+        
+
+        pdf=pdfkit.from_string(html,False,configuration=pdfkit_config)
+        pdf = pdfkit.from_string(html, False,configuration=pdfkit_config)
         response = make_response(pdf)
         response.headers["Content-Type"] = "cr/pdf"
-
+        
         response.headers["Content-Disposition"] = "inline; filename=ticke.pdf"
         return response
         
