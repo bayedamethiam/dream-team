@@ -790,11 +790,11 @@ def cr_test(id):
 
         #pdf=pdfkit.from_string(html,False,configuration=pdfkit_config)
         #pdf = pdfkit.from_string(html, False,configuration=pdfkit_config)
-        pdf =pdfkit.from_url("www.google.com","test.pdf",configuration=pdfkit_config)
-        response = make_response(pdf)
-        response.headers["Content-Type"] = "cr/pdf"
+        pdfkit.from_url("www.google.com","test.pdf",configuration=pdfkit_config)
+        #response = make_response(pdf)
+        #response.headers["Content-Type"] = "cr/pdf"
 
-        response.headers["Content-Disposition"] = "inline; filename=ticke.pdf"
+        #response.headers["Content-Disposition"] = "inline; filename=ticke.pdf"
         return "succes"
         
 
