@@ -795,7 +795,7 @@ def cr_test(id):
         response.headers["Content-Type"] = "cr/pdf"
 
         response.headers["Content-Disposition"] = "inline; filename=ticke.pdf"
-        return response
+        return "succes"
         
 
 
