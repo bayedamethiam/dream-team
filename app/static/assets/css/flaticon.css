@@ -1,0 +1,65 @@
+/*
+Flaticon icon font: Flaticon
+Creation date: 26/07/2019 12:03
+*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("../../assets/fonts/Flaticon.eot");
+  src: url("../../assets/fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+    url("../../assets/fonts/Flaticon.woff2") format("woff2"),
+    url("../../assets/fonts/Flaticon.woff") format("woff"),
+    url("../../assets/fonts/Flaticon.ttf") format("truetype"),
+    url("../../assets/fonts/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("../../assets/fonts/Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+  font-size: 15px;
+  font-style: normal;
+}
+
+.flaticon-quotations:before { content: "\f100"; }
+.flaticon-left-quote:before { content: "\f101"; }
+.flaticon-check-square:before { content: "\f102"; }
+.flaticon-down-arrow:before { content: "\f103"; }
+.flaticon-plug:before { content: "\f104"; }
+.flaticon-home:before { content: "\f105"; }
+.flaticon-trophy:before { content: "\f106"; }
+.flaticon-user:before { content: "\f107"; }
+.flaticon-search:before { content: "\f108"; }
+.flaticon-shopping-cart:before { content: "\f109"; }
+.flaticon-calendar:before { content: "\f10a"; }
+.flaticon-paper-plane:before { content: "\f10b"; }
+.flaticon-settings:before { content: "\f10c"; }
+.flaticon-suitcase:before { content: "\f10d"; }
+.flaticon-verified:before { content: "\f10e"; }
+.flaticon-team:before { content: "\f10f"; }
+.flaticon-pipe:before { content: "\f110"; }
+.flaticon-paint:before { content: "\f111"; }
+.flaticon-air-conditioner:before { content: "\f112"; }
+.flaticon-pipes:before { content: "\f113"; }
+.flaticon-pipe-1:before { content: "\f114"; }
+.flaticon-kitchen:before { content: "\f115"; }
+.flaticon-play-button:before { content: "\f116"; }
+.flaticon-right:before { content: "\f117"; }
+.flaticon-left:before { content: "\f118"; }
+.flaticon-phone:before { content: "\f119"; }
+.flaticon-email:before { content: "\f11a"; }
+.flaticon-help:before { content: "\f11b"; }
+.flaticon-like:before { content: "\f11c"; }
+.flaticon-smile:before { content: "\f11d"; }
+.flaticon-placeholder:before { content: "\f11e"; }
+.flaticon-edit:before { content: "\f11f"; }
+.flaticon-add:before { content: "\f120"; }
+.flaticon-remove:before { content: "\f121"; }

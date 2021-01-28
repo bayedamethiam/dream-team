@@ -1,0 +1,30 @@
+<!-- app/templates/admin/tickets/ticket.html -->
+
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+{% block title %}
+    {% if add_ticket %}
+        Ajouter ticket
+    {% else %}
+        Modifier ticket
+    {% endif %}
+{% endblock %}
+{% block body %}
+<div class="content-section">
+ <div class="outer">
+    <div class="middle">
+      <div class="inner">
+        <div class="center">
+            {% if add_ticket %}
+                <h1>Ajouter ticket</h1>
+            {% else %}
+                <h1>Modifier ticket</h1>
+            {% endif %}
+            <br/>
+            {{ wtf.quick_form(form) }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

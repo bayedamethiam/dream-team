@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
+  <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <meta charset="utf-8">
+  <!--************************************************ DEBUT BALISAGE STYLE ****************************************************-->
+  <style>
+    body {
+      padding: 5%;
+      font-family: Lato, sans-serif;
+    }
+
+    select {
+      width: 50%;
+    }
+
+
+    file-upload {
+      background-color: #ffffff;
+      width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+
+    .file-upload-content {
+      display: none;
+    }
+
+    .file-upload-input {
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      outline: none;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .image-upload-wrap {
+      margin-top: 20px;
+      border: 1px solid #1b2f68;
+      position: relative;
+    }
+
+
+    .image-title-wrap {
+      padding: 0 15px 15px 15px;
+      color: #222;
+    }
+
+
+    .file-upload-image {
+      max-height: 200px;
+      max-width: 200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .horaire_int {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .detail_panne {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .time {
+      margin-right: 20px;
+    }
+
+    .liste {
+      margin-right: 100px;
+      margin-left: 20px;
+    }
+  </style>
+
+  <!--************************************************ FIN BALISAGE STYLE ****************************************************-->
+</head>
+
+<!--************************************************ DEBUT BALISAGE BODY ****************************************************-->
+
+<body>
+
+  <h1>MAINTENANCE CORRECTIVE</h1>
+
+  <h3>Maintenance des Equipements Telecom</h3>
+
+  <p><i>Ce compte rendu à été rédigé pour l'intervention n°<strong>XXXXX</strong> de l'entreprise Phone Com</i></p>
+
+  <button type="button" class="btn btn-info">Enregistrer le Compte Rendu</button>
+
+  <hr></br>
+
+  <h4>Technicien(s) Affecté(s)</h4>
+  <hr>
+
+
+  <div class="row">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <p class="card-title">Nom</p>
+      <input type="name" id="" />
+      <p class="card-title mb-2 ">Specialisation</p>
+      <input type="Specialisation" id="" />
+
+      <p class="card-text"><strong>Attaché à :</strong> <input type="name" id="" /></br><strong>Nombre d'Interventions :</strong>
+        <input type="name" id="" /></p>
+      <a href="#" class="card-link">Telephone</a></br>
+      <input type="telephone" id="" /></p>
+      <a href="#" class="card-link">mail</a></br>
+      <input type="mail" id="" /></p>
+    </div>
+
+  </div>
+  <div style= "width: 2rem;"></div>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <p class="card-title">Nom</p>
+      <input type="name" id="" />
+      <p class="card-title mb-2 ">Specialisation</p>
+      <input type="Specialisation" id="" />
+
+      <p class="card-text"><strong>Attaché à :</strong> <input type="name" id="" /></br><strong>Nombre d'Interventions :</strong>
+        <input type="name" id="" /></p>
+      <a href="#" class="card-link">Telephone</a></br>
+      <input type="telephone" id="" /></p>
+      <a href="#" class="card-link">mail</a></br>
+      <input type="mail" id="" /></p>
+    </div>
+
+  </div>
+  <div style= "width: 2rem;"></div>
+  
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <p class="card-title">Nom</p>
+      <input type="name" id="" />
+      <p class="card-title mb-2 ">Specialisation</p>
+      <input type="Specialisation" id="" />
+
+      <p class="card-text"><strong>Attaché à :</strong> <input type="name" id="" /></br><strong>Nombre d'Interventions :</strong>
+        <input type="name" id="" /></p>
+      <a href="#" class="card-link">Telephone</a></br>
+      <input type="telephone" id="" /></p>
+      <a href="#" class="card-link">mail</a></br>
+      <input type="mail" id="" /></p>
+    </div>
+
+  </div>
+
+  <div style= "width: 2rem;"></div>
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <p class="card-title">Nom</p>
+      <input type="name" id="" />
+      <p class="card-title mb-2 ">Specialisation</p>
+      <input type="Specialisation" id="" />
+
+      <p class="card-text"><strong>Attaché à :</strong> <input type="name" id="" /></br><strong>Nombre d'Interventions :</strong>
+        <input type="name" id="" /></p>
+      <a href="#" class="card-link">Telephone</a></br>
+      <input type="telephone" id="" /></p>
+      <a href="#" class="card-link">mail</a></br>
+      <input type="mail" id="" /></p>
+    </div>
+
+  </div>
+
+
+  <div style= "width: 2rem;"></div>
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <p class="card-title">Nom</p>
+      <input type="name" id="" />
+      <p class="card-title mb-2 ">Specialisation</p>
+      <input type="Specialisation" id="" />
+
+      <p class="card-text"><strong>Attaché à :</strong> <input type="name" id="" /></br><strong>Nombre d'Interventions :</strong>
+        <input type="name" id="" /></p>
+      <a href="#" class="card-link">Telephone</a></br>
+      <input type="telephone" id="" /></p>
+      <a href="#" class="card-link">mail</a></br>
+      <input type="mail" id="" /></p>
+    </div>
+
+  </div>
+
+
+  <div style= "width: 2rem;"></div>
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <p class="card-title">Nom</p>
+      <input type="name" id="" />
+      <p class="card-title mb-2 card-title">Specialisation</p>
+      <input type="Specialisation" id="" />
+
+      <p class="card-text"><strong>Attaché à :</strong> <input type="name" id="" /></br><strong>Nombre d'Interventions :</strong>
+        <input type="name" id="" /></p>
+      <a href="#" class="card-link">Telephone</a></br>
+      <input type="telephone" id="" /></p>
+      <a href="#" class="card-link">mail</a></br>
+      <input type="mail" id="" /></p>
+    </div>
+
+  </div>
+</div>
+  </div>
+  </br>
+  </br>
+
+
+  <h4>Date et Horaires de l'Intervention</h4>
+  <hr>
+
+  <div class="inputs date">
+    <label for="">Date de l'Intervention</label><br>
+    <input type="date" id="" />
+  </div></br>
+
+  <div class="horaire_int">
+
+    <div class="inputs time">
+      <label for="">T0</label><br>
+      <input type="time" id="" />
+    </div>
+
+    <div class="inputs time">
+      <label for="">T1</label><br>
+      <input type="time" id="" />
+    </div>
+
+
+    <div class="inputs time">
+      <label for="">T2</label><br>
+      <input type="time" id="" />
+    </div>
+
+
+    <div class="inputs time">
+      <label for="">Tfin</label><br>
+      <input type="time" id="" />
+    </div>
+
+  </div>
+
+  </br></br>
+
+  <h4>Détails de la Panne</h4>
+  <hr>
+
+  <div class="detail_panne">
+    <div> <label>Nature de l'Incident</label><br>
+      <input type="text" placeholder="Nature de l'Incident" required>
+      <br>
+    </div>
+
+
+    <div>
+      <label>Technologie Concernée</label><br>
+      <select class="mb-4 liste" id="dropdown">
+        <option>ATM</option>
+        <option>DSL</option>
+        <option>BLR</option>
+        <option>SDH</option>
+        <option>RAD</option>
+        <option>WDM</option>
+        <option>FH</option>
+      </select>
+      <br>
+    </div>
+
+    <div>
+      <label>Constructeur Concerné</label><br>
+      <select class="mb-4 liste" id="dropdown">
+        <option>Alcatel</option>
+        <option>Nortel</option>
+        <option>Marconi</option>
+        <option>Huawei</option>
+        <option>RAD</option>
+        <option>Lucent</option>
+        <option>Nokia</option>
+      </select>
+      <br>
+    </div>
+
+    <div>
+      <label>Type d’équipement concerné</label><br>
+      <select class="mb-4 liste" id="dropdown">
+        <option>7270</option>
+        <option>ASX</option>
+        <option>9400UX/9600usy/9600LH</option>
+        <option>MA5300/MA5200</option>
+        <option>Metro (1000+1500+2500)</option>
+        <option>FSP2000</option>
+        <option>cherokee/wattpower</option>
+      </select>
+      <br>
+    </div>
+
+  </div>
+
+
+  <textarea id="story" name="story" rows="5" cols="200">Raisons de la panne  </textarea>
+  <textarea id="story" name="story" rows="5"
+    cols="200"> Actions effectuées pour y remédier et pièces détachées utilisées </textarea>
+
+  </br>
+  </br>
+  <h4>Ajouter des Photos et Documents</h4>
+  <hr>
+  <div class="file-upload">
+    <button class="file-upload-btn btn btn-info" type="button"
+      onclick="$('.file-upload-input').trigger( 'click' )">Ajouter une Photo</button>
+
+    <div class="image-upload-wrap">
+      <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+      <div class="drag-text">
+      </div>
+    </div>
+    <div class="file-upload-content">
+      <img class="file-upload-image" src="#" alt="your image" />
+      <div class="image-title-wrap">
+        <button type="button" onclick="removeUpload()" class="remove-image">Supprimer cette Photo : <span
+            class="image-title">Uploaded Image</span></button>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  </div>
+
+</body>
+
+<!--************************************************ FIN BALISAGE BODY ****************************************************-->
+
+</html>
+
+
+<!--************************************************ DEBUT BALISAGE SCRIPT ****************************************************-->
+<script>
+
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $('.image-upload-wrap').hide();
+
+        $('.file-upload-image').attr('src', e.target.result);
+        $('.file-upload-content').show();
+
+        $('.image-title').html(input.files[0].name);
+      };
+
+      reader.readAsDataURL(input.files[0]);
+
+    } else {
+      removeUpload();
+    }
+  }
+
+  function removeUpload() {
+    $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+    $('.file-upload-content').hide();
+    $('.image-upload-wrap').show();
+  }
+  $('.image-upload-wrap').bind('dragover', function () {
+    $('.image-upload-wrap').addClass('image-dropping');
+  });
+  $('.image-upload-wrap').bind('dragleave', function () {
+    $('.image-upload-wrap').removeClass('image-dropping');
+  });
+
+
+</script>

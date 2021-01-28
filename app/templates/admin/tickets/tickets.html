@@ -1,0 +1,80 @@
+
+<!-- app/templates/admin/tickets/tickets.html -->
+
+{% import "bootstrap/utils.html" as utils %}
+{% extends "base.html" %}
+{% block title %}tickets{% endblock %}
+{% block body %}
+
+
+<div class="content-section">
+    <div class="outer">
+        <div class="middle">
+            <div class="inner">
+                <br />
+                {{ utils.flashed_messages() }}
+                <br />
+                <h1 style="text-align:center;">Tickets</h1>
+                {% if tickets %}
+                <hr class="intro-divider">
+                <div class="center">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                              <th width="15%"> Titre </th>
+                              <th width="15%"> Nature </th>
+                              <th width="15%"> Categorie </th>
+                              <th width="15%"> Sous_categorie </th>
+                              <th width="15%"> Equipement </th>
+                              <th width="15%"> Adresse </th>
+                              <th width="15%"> Site </th>
+                              <th width="15%"> Description </th>
+                              <th width="15%"> Etat </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for ticket in tickets %}
+                            <tr>
+                                <td> {{ ticket.titre }} </td>
+                                <td> {{ ticket.nature }} </td>
+                                <td> {{ ticket.categorie }} </td>
+                                <td> {{ ticket.sous_categorie }} </td>
+                                <td> {{ ticket.equipement }} </td>
+                                <td> {{ ticket.adresse }} </td>
+                                <td> {{ ticket.site }} </td>
+                                <td> {{ ticket.description }} </td>
+                                <td> {{ ticket.etat }} </td>
+                                
+
+                                <td>
+                                    <a href="{{ url_for('admin.edit_ticket', id=ticket.id) }}">
+                                        <i class="fa fa-pencil"></i> Edit
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{ url_for('admin.delete_ticket', id=ticket.id) }}">
+                                        <i class="fa fa-trash"></i> Delete
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div style="text-align: center">
+                    {% else %}
+                    <div style="text-align: center">
+                        <h3> Aucun Ticket n'a été créé </h3>
+                        <hr class="intro-divider">
+                        {% endif %}
+                        <a href="{{ url_for('admin.add_ticket') }}" class="btn btn-default btn-lg">
+                            <i class="fa fa-plus"></i>
+                            Ajouter ticket
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {% endblock %}

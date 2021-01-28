@@ -21,6 +21,7 @@
     <!-- Modify nav bar menu -->
     <li><a href="{{ url_for('admin.list_departments') }}">Departments</a></li>
     <li><a href="{{ url_for('admin.list_roles') }}">Roles</a></li>
+    <li><a href="{{ url_for('admin.list_tickets') }}">Tickets</a></li>
     <li><a href="{{ url_for('admin.list_employees') }}">Employees</a></li>
     {% else %}
     <li><a href="{{ url_for('home.dashboard') }}">Dashboard</a></li>

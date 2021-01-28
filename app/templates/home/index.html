@@ -1,20 +1,992 @@
-<!-- app/templates/home/index.html -->
+<!doctype html>
+<html lang="zxx">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-{% extends "base.html" %}
-{% block title %}Home{% endblock %}
-{% block body %}
-<div class="intro-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="intro-message">
-                    <h1>Project Dream Team</h1>
-                    <h3>The best company in the world!</h3>
-                    <hr class="intro-divider">
-                    </ul>
+        <!-- Bootstrap Min CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/bootstrap.min.css') }}">
+        <!-- Animate Min CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/animate.min.css') }}">
+        <!-- Owl Carousel Min CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/owl.carousel.min.css') }}">
+        <!-- FontAwesome Min CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/fontawesome.min.css') }}">
+        <!-- Flaticon CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/flaticon.css') }}">
+        <!-- Odometer Min CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/odometer.min.css') }}">
+        <!-- Magnific Popup Min CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/magnific-popup.min.css') }}">
+        <!-- MeanMenu CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/meanmenu.css') }}">
+        <!-- Nice Select Min CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/nice-select.min.css') }}">
+        <!-- Slick Min CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/slick.min.css') }}">
+        <!-- Slick Theme Min CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/slick-theme.min.css') }}">
+        <!-- Style CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}">
+        <!-- Responsive CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/responsive.css') }}">
+
+        <title>Pinguard</title>
+
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/img/favicon.png') }}">
+    </head>
+
+    <body>
+
+        <!-- Start Preloader Area -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="icon">
+                    <i class="flaticon-help"></i>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <div class="icon">
+                    <i class="flaticon-settings"></i>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-{% endblock %}
+        <!-- End Preloader Area -->
+
+        <!-- Start Header Area -->
+        <header class="header-area">
+            <div class="top-header">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5 col-md-12">
+                            <div class="top-header-content">
+                                <ul class="nav-list">
+                                    <li><a href="{{ url_for('static', filename='#') }}">à propos de nous</a></li>
+                                    <li><a href="{{ url_for('static', filename='#') }}">Career</a></li>
+                                    <li><a href="{{ url_for('static', filename='#') }}">FAQ's</a></li>
+                                </ul>
+    
+                                <ul class="social">
+                                    <li><a href="{{ url_for('static', filename='#') }}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="{{ url_for('static', filename='#') }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="{{ url_for('static', filename='#') }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="{{ url_for('static', filename='#') }}" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-7 col-md-12">
+                            <ul class="header-info">
+                                <li><i class="fas fa-map-marker-alt"></i> 2 peripherique henri wallon Paris </li>
+                                <li><i class="far fa-clock"></i> ouvert  8h-18h: lundi - vendredi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="middle-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-12">
+                            <div class="logo">
+                                <a class="center"  href="{{ url_for('home.homepage') }}"><img src="{{ url_for('static', filename='assets/img/logo.png') }}" alt="image" width="50px"></a>
+                                <h2 class="heading">
+                                    <strong>P</strong>in<strong>G</strong>uard
+                                </h2>
+                            </div>
+                            
+                        </div>
+
+                        <div class="col-lg-9 col-md-12">
+                            <ul>
+                                <li>
+                                    <i class="flaticon-email"></i>
+                                    envoyez nous un email
+                                    <span>support@pinguard.com</span>
+                                </li>
+                                <li>
+                                    <i class="flaticon-phone"></i>
+                                    24/7 numero d'urgence
+                                    <span>+33624890443</span>
+                                </li>
+                                <li>
+                                    <a href="{{ url_for('static', filename='#') }}" class="btn btn-primary">Devis gratuit</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-area">
+                <div class="fennec-mobile-nav">
+                    <div class="logo">
+                        <a  href="{{ url_for('home.homepage') }}"><img src="{{ url_for('static', filename='assets/img/logo.png') }}" alt="logo"></a>
+                    </div>
+                </div>
+    
+                <div class="fennec-nav">
+                    <div class="container">
+                        <nav class="navbar navbar-expand-md navbar-light">    
+                            <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item"><a href="{{ url_for('home.homepage') }}" class="nav-link active">Home <i class="nav-link active"></i></a>
+                                   
+                                    </li>
+                                    
+                                    
+    
+                             
+    
+                                    <li class="nav-item"><a href="{{ url_for('auth.login') }}" class="nav-link">Client <i class="nav-link"></i></a>
+                                       
+                                    </li>
+    
+
+                                    <li class="nav-item"><a href="{{ url_for('auth.login') }}" class="nav-link">Contact</a></li>
+                                </ul>
+
+                                <div class="others-option">
+                                    <div class="option-item"><i class="search-btn flaticon-search"></i>
+                                        <i class="close-btn fas fa-times"></i>
+                                        
+                                        <div class="search-overlay search-popup">
+                                            <div class='search-box'>
+                                                <form class="search-form">
+                                                    <input class="search-input" name="search" placeholder="Search" type="text">
+    
+                                                    <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- End Header Area -->
+
+        <!-- Start Main Banner Area -->
+        <div class="home-slides owl-carousel owl-theme">
+            <div class="main-banner extra-pb item-bg1">
+                <div class="container">
+                    <div class="main-banner-content">
+                        <h1>PinGuard, plus rapide que la 5G</h1>
+                        <p>PinGuard est une entreprise de service jeune et dynamiquedans  laquelle  nous  aidons  nos  clients à relever leurs défis</p>
+                        <a href="{{ url_for('static', filename='') }}" class="btn btn-primary">Demander un devis</a>
+                    </div>
+                </div>
+            </div>
+
+            
+
+            <div class="main-banner extra-pb item-bg3">
+                <div class="container">
+                    <div class="main-banner-content">
+                        <h1>Avec Pinguard,</h1>
+                        <p>la maintenance est à porté de main</p>
+                        <a href="{{ url_for('static', filename='#') }}" class="btn btn-primary">Demander un devis</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Main Banner Area -->
+
+        <!-- Start Boxes Area -->
+        <section class="boxes-area">
+            <div class="container">
+                <div class="row m-0">
+                    <div class="col-lg-4 col-md-6 p-0">
+                        <div class="single-box">
+                            <div class="icon">
+                                <i class="flaticon-settings"></i>
+                            </div>
+                            
+                            <h3> + 15 ans <br>d'experience profeesionel</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                            <a href="#" class="read-more-btn">en savoir plus</a>
+                            <br><br>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 p-0">
+                        <div class="single-box">
+                            <div class="icon">
+                                <i class="flaticon-verified"></i>
+                            </div>
+
+                            <h3>Partout <br>en France</h3>
+                            <p>L’ensemble  de  nos  agences  permettent  de  re-couvrir  la  France  et  ainsi  de  proposer  à  nos clients  des  interventions  de  maintenance  rapide et efficace.</p>
+                            <a href="#" class="read-more-btn">en savoir plus</a>
+
+                           
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3 p-0">
+                        <div class="single-box">
+                            <div class="icon">
+                                <i class="flaticon-team"></i>
+                            </div>
+                            <h3>+ 100 collaborateurs <br>à travers le territoire</h3>
+                            <p> 90 techniciens et ingenieurs reparties sur toute la France</p>
+                            <br><br> <br>
+                            <a href="#" class="read-more-btn">en savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Boxes Area -->
+
+        <!-- Start About Area -->
+        <section class="about-area ptb-100">
+            <div class="container">
+               <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="about-image">
+                            <img src="{{ url_for('static', filename='assets/img/about1.jpg') }}" alt="image" >
+                            <img src="{{ url_for('static', filename='assets/img/about2.jpg') }}" alt="image">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="about-content">
+                            <div class="section-title">
+                                <span>A propos de nous</span>
+                                <h2>Nous avons + 10 ans d'experience dans la maintenance</h2>
+                                
+
+                                <img src="{{ url_for('static', filename='assets/img/section-title-shape.png') }}" alt="image">
+                            </div>
+                            <ul>
+                                <li><i class="flaticon-check-square"></i> Infrastructures terrestres</li>
+                                <li><i class="flaticon-check-square"></i> Équipements télécommunication</li>
+                                <li><i class="flaticon-check-square"></i> Reseau fibre</li>
+                                <li><i class="flaticon-check-square"></i> Équipements électrique</li>
+                                <li><i class="flaticon-check-square"></i> Équipements informatiques</li>
+                                <li><i class="flaticon-check-square"></i> disponible 24/7</li>
+                            </ul>
+                            <p>Large champs de compétence </p>
+
+                            <a href="#" class="btn btn-primary"> en savoir plus</a>
+                        </div>
+                    </div>
+               </div>
+            </div>
+
+            <div class="shape-box1"><img src="{{ url_for('static', filename='assets/img/shape1.png') }}" alt="image"></div>
+        </section>
+        <!-- End About Area -->
+
+        <!-- Start Services Area -->
+        <section class="services-area ptb-100">
+            <div class="container">
+                <div class="section-title">
+                    <span>Travail professionnel</span>
+                    <h2>Nos services</h2>
+                    <p> Nous sommes specialisé dans la maintenance des equipements et infrastructures de telecommunications actifs comme passifs.
+                     </p>
+
+                    <a href="#" class="btn btn-secondary">Plus de Services</a>
+
+                    <img src="{{ url_for('static', filename='assets/img/section-title-shape.png') }}" alt="image">
+                </div>
+
+                <div class="row">
+                    <div class="services-slides owl-carousel owl-theme">
+
+
+                        <div class="col-lg-12 col-md-12">
+                            <div class="single-services-box">
+                                <div class="icon">
+                                    <i class="flaticon-home"></i>
+                                </div>
+                                <h3></h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  dolore magna aliqua.  Quis ipsum suspendisse ultrices gravida.</p>
+                                <a href="#" class="read-more-btn">Read More</a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12">
+                            <div class="single-services-box">
+                                <div class="icon">
+                                    <i class="flaticon-pipe"></i>
+                                </div>
+                                <h3>Plumber Services</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  dolore magna aliqua.  Quis ipsum suspendisse ultrices gravida.</p>
+                                <a href="#" class="read-more-btn">Read More</a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12">
+                            <div class="single-services-box">
+                                <div class="icon">
+                                    <i class="flaticon-air-conditioner"></i>
+                                </div>
+                                <h3>Cooling Services</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  dolore magna aliqua.  Quis ipsum suspendisse ultrices gravida.</p>
+                                <a href="#" class="read-more-btn">Read More</a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12">
+                            <div class="single-services-box">
+                                <div class="icon">
+                                    <i class="flaticon-pipes"></i>
+                                </div>
+                                <h3>Water line repair</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  dolore magna aliqua.  Quis ipsum suspendisse ultrices gravida.</p>
+                                <a href="#" class="read-more-btn">Read More</a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12">
+                            <div class="single-services-box">
+                                <div class="icon">
+                                    <i class="flaticon-pipe-1"></i>
+                                </div>
+                                <h3>Bathroom Plumbing</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  dolore magna aliqua.  Quis ipsum suspendisse ultrices gravida.</p>
+                                <a href="#" class="read-more-btn">Read More</a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12">
+                            <div class="single-services-box">
+                                <div class="icon">
+                                    <i class="flaticon-kitchen"></i>
+                                </div>
+                                <h3>Kitchen Plumbing</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  dolore magna aliqua.  Quis ipsum suspendisse ultrices gravida.</p>
+                                <a href="#" class="read-more-btn">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shape-box2"><img src="{{ url_for('static', filename='assets/img/shape2.png') }}" alt="image"></div>
+        </section>
+        <!-- End Services Area -->
+
+        <!-- Start Testimonials and Video Area -->
+        <section class="testimonials-video" style="background-color: #02298A;" >
+            <div class="row m-0">
+                <div class="col-lg-12 col-md-12 p-0">
+                    <div class="testimonials-inner">
+                        <div class="section-title">
+                            <span>Temoignages</span>
+                            <h2>Ce que nos clients pensent</h2>
+                            <p>La quête de la satisfaction client est notre quotidient  </p>
+
+                            <img src="{{ url_for('static', filename='assets/img/section-title-shape.png') }}" alt="image">
+                        </div>
+
+                        <div class="testimonials-slides owl-carousel owl-theme">
+                            <div class="testimonials-item">
+                                <img src="{{ url_for('static', filename='assets/img/client1.jpg') }}" alt="image">
+                                <h3>Michelle Lavon</h3>
+                                <span> DRH </span>
+
+                                <p>Depuis que PinGuard a repris le contrat de maintenance et d’assistance de notre reseau fibre, leur accompagnement a toujours été réactif et de grande qualité. L’équipe PinGuard est toujours disponible et nous aide clairement à fiabiliser l’existant comme à trouver des solutions dès que nous rencontrons des problèmes.</p>
+                            </div>
+
+                            <div class="testimonials-item">
+                                <img src="{{ url_for('static', filename='assets/img/client1.jpg') }}" alt="image">
+                                <h3>Jason Statham</h3>
+                                <span>DSI chez SOA telecom</span>
+
+                                <p>Aujourd’hui nous sommes beaucoup plus sereins et nous pouvons nous concentrer sur notre activité puisque les équipes de Netrock sont beaucoup plus réactives et un peu plus compétentes que la moyenne puisqu’elles interviennent très rapidement et à l’heure où je parle je ne crois pas que mes collaborateurs ont pu souffrir d’une problématique qui n’ait pas été résolue.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               
+            </div>
+        </section>
+        <!-- End Testimonials and Video Area -->
+<br>
+        <!-- Start Fun Facts And Partner Area -->
+        <section class="funfacts-partner" style="background-color: #02298A;">
+            <div class="container-fluid p-0">
+                <div class="row m-0 align-items-center">
+                    <div class="col-lg-12 col-md-12 p-0">
+                        <div class="funfacts-inner">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-4">
+                                    <div class="funfacts-box">
+                                        <i class="flaticon-suitcase"></i>
+                                        <h3><span class="odometer" data-count="79">00</span>+</h3>
+                                        <p>Total contrat</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-4">
+                                    <div class="funfacts-box">
+                                        <i class="flaticon-user"></i>
+                                        <h3><span class="odometer" data-count="100">00</span>+</h3>
+                                        <p>Collaborateurs </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-4">
+                                    <div class="funfacts-box">
+                                        <i class="flaticon-trophy"></i>
+                                        <h3><span class="odometer" data-count="4">00</span>+</h3>
+                                        <p>disctinctions</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </section>
+        <!-- End Fun Facts And Partner Area -->
+
+        <!-- Start Project Area -->
+        <section class="project-area ptb-100">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 col-md-12">
+                        <div class="section-title">
+                            <span>Rececent completed</span>
+                            <h2>Our Latest Projects</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+
+                            <img src="{{ url_for('static', filename='assets/img/section-title-shape.png') }}" alt="image">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7 col-md-12">
+                        <div class="shorting-menu">
+                            <button class="filter" data-filter="all">All</button>
+                            <button class="filter" data-filter=".heating">Heating</button>
+                            <button class="filter" data-filter=".cooling">Cooling</button>
+                            <button class="filter" data-filter=".plumbing">Plumbing</button>
+                            <button class="filter" data-filter=".electrical">Electrical</button>
+                            <button class="filter" data-filter=".painting">Painting</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shorting">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 mix heating">
+                            <div class="single-project-box">
+                                <img src="{{ url_for('static', filename='assets/img/project-img1.jpg') }}" alt="image">
+
+                                <div class="project-content">
+                                    <div class="inner-content">
+                                        <h3>Heating</h3>
+
+                                        <p>Lorem ipsum dolor sit amet adipscing, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                        <a href="#" class="btn btn-primary">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mix plumbing">
+                            <div class="single-project-box">
+                                <img src="{{ url_for('static', filename='assets/img/project-img2.jpg') }}" alt="image">
+
+                                <div class="project-content">
+                                    <div class="inner-content">
+                                        <h3>Plumbing</h3>
+
+                                        <p>Lorem ipsum dolor sit amet adipscing, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                        <a href="#" class="btn btn-primary">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mix painting">
+                            <div class="single-project-box">
+                                <img src="{{ url_for('static', filename='assets/img/project-img3.jpg') }}" alt="image">
+
+                                <div class="project-content">
+                                    <div class="inner-content">
+                                        <h3>Painting</h3>
+
+                                        <p>Lorem ipsum dolor sit amet adipscing, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                        <a href="#" class="btn btn-primary">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mix electrical">
+                            <div class="single-project-box">
+                                <img src="{{ url_for('static', filename='assets/img/project-img4.jpg') }}" alt="image">
+
+                                <div class="project-content">
+                                    <div class="inner-content">
+                                        <h3>Electrical</h3>
+
+                                        <p>Lorem ipsum dolor sit amet adipscing, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                        <a href="#" class="btn btn-primary">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mix plumbing">
+                            <div class="single-project-box">
+                                <img src="{{ url_for('static', filename='assets/img/project-img5.jpg') }}" alt="image">
+
+                                <div class="project-content">
+                                    <div class="inner-content">
+                                        <h3>Plumbing</h3>
+
+                                        <p>Lorem ipsum dolor sit amet adipscing, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                        <a href="#" class="btn btn-primary">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 mix cooling">
+                            <div class="single-project-box">
+                                <img src="{{ url_for('static', filename='assets/img/project-img6.jpg') }}" alt="image">
+
+                                <div class="project-content">
+                                    <div class="inner-content">
+                                        <h3>Cooling</h3>
+
+                                        <p>Lorem ipsum dolor sit amet adipscing, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                        <a href="#" class="btn btn-primary">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shape-box3"><img src="{{ url_for('static', filename='assets/img/shape3.png') }}" alt="image"></div>
+        </section>
+        <!-- End Project Area -->
+
+        <!-- Start Career Area -->
+        <section class="career-area ptb-100 jarallax" data-jarallax='{"speed": 0.2}'>
+            <div class="container">
+                <div class="career-content">
+                    <span>Travailler avec nous</span>
+                    <h2>c'est assurer ses arrieres </h2>
+                    <a href="#" class="btn btn-primary"> Contactez nous</a>
+                </div>
+            </div>
+        </section>
+        <!-- End Career Area -->
+
+        <!-- Start Team Area -->
+        <section class="team-area ptb-100 bg-image">
+            <div class="container">
+                <div class="section-title">
+                    <span>Nos experts</span>
+                    <h2>A la recontre de notre equipe</h2>
+                    <p>Des techniciens performant dans divers secteurs (tertiaire, optique,...) </p>
+                    <p>Des ingénieurs passionnés spécialisés dans le conseil, mais également les interventions de maintenance</p>
+                    <a href="#" class="btn btn-secondary">Meet All</a>
+
+                    <img src="{{ url_for('static', filename='assets/img/section-title-shape.png') }}" alt="image">
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-team-box">
+                            <img src="{{ url_for('static', filename='assets/img/team-img1.jpg') }}" alt="image">
+
+                            <div class="team-content">
+                                <h3>Emilie Locquette </h3>
+                                <span>Chef de projet</span>
+                            </div>
+
+                            <div class="team-hover-content">
+                                <h3>Emilie Locquette </h3>
+                                <span>chef de projet</span>
+
+                                <ul>
+                                    <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-team-box">
+                            <img src="{{ url_for('static', filename='assets/img/team-img2.jpg') }}" alt="image">
+
+                            <div class="team-content">
+                                <h3>Pierre Vidal</h3>
+                                <span>Expert optique</span>
+                            </div>
+
+                            <div class="team-hover-content">
+                                <h3>Pierre Vidal</h3>
+                                <span>Expert optique</span>
+
+                                <ul>
+                                    <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
+                        <div class="single-team-box">
+                            <img src="{{ url_for('static', filename='assets/img/team-img3.jpg') }}" alt="image">
+
+                            <div class="team-content">
+                                <h3>Paul Bachelard</h3>
+                                <span>Expert télécommunication </span>
+                            </div>
+
+                            <div class="team-hover-content">
+                                <h3>Paul Bachelard</h3>
+                                <span>Expert télécommunication</span>
+
+                                <ul>
+                                    <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Team Area -->
+
+        <!-- Start Leading Area -->
+        <section class="leading-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 col-md-12">
+                        <div class="leading-image">
+                            <img src="{{ url_for('static', filename='assets/img/testeu.jpg') }}" alt="image">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7 col-md-12">
+                        <div class="leading-content">
+                            <h3>Qualifié et rapide nous sommes</h3>
+                            <h2>+ 10</h2>
+                            <span>années d'experience</span>
+
+                            <ul>
+                                <li>
+                                    <i class="flaticon-phone"></i>
+                                    24/7  support
+                                    <span>+33624890443</span>
+                                </li>
+                                <li>
+                                    <i class="flaticon-email"></i>
+                                    Laissez nous un mail
+                                    <span>support@pinguard.com</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="animate-border">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </section>
+        <!-- End Leading Area -->
+
+      
+        <!-- End Blog Area -->
+
+        <!-- Start Products Cart Modal -->
+        <div class="modal right fade productsCartModal" id="productsCartModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                    <div class="modal-body">
+                        <h3>My Cart (3)</h3>
+
+                        <div class="product-cart-content">
+                            <div class="product-cart">
+                                <div class="product-image">
+                                    <img src="{{ url_for('static', filename='assets/img/shop-img1.jpg') }}" alt="image">
+                                </div>
+
+                                <div class="product-content">
+                                    <h3><a href="#">Pipe cutters</a></h3>
+                                    <div class="product-price">
+                                        <span>1</span>
+                                        <span>x</span>
+                                        <span class="price">$200.00</span>
+                                    </div>
+
+                                    <a href="#" class="remove-btn"><i class="far fa-trash-alt"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="product-cart">
+                                <div class="product-image">
+                                    <img src="{{ url_for('static', filename='assets/img/shop-img2.jpg') }}" alt="image">
+                                </div>
+
+                                <div class="product-content">
+                                    <h3><a href="#">Telescopic Tube Cutter</a></h3>
+                                    <div class="product-price">
+                                        <span>1</span>
+                                        <span>x</span>
+                                        <span class="price">$220.00</span>
+                                    </div>
+
+                                    <a href="#" class="remove-btn"><i class="far fa-trash-alt"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="product-cart">
+                                <div class="product-image">
+                                    <img src="{{ url_for('static', filename='assets/img/shop-img3.jpg') }}" alt="image">
+                                </div>
+
+                                <div class="product-content">
+                                    <h3><a href="#">Mole Grips</a></h3>
+                                    <div class="product-price">
+                                        <span>1</span>
+                                        <span>x</span>
+                                        <span class="price">$244.00</span>
+                                    </div>
+
+                                    <a href="#" class="remove-btn"><i class="far fa-trash-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-cart-subtotal">
+                            <span>Subtotal</span>
+
+                            <span class="subtotal">$664.00</span>
+                        </div>
+
+                        <div class="product-cart-btn">
+                            <a href="#" class="btn btn-primary">Proceed to Checkout</a>
+                            <a href="#" class="btn btn-secondary">View Shopping Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Products Cart Modal -->
+
+        <!-- Start Products Modal -->
+        <div class="modal fade productsQuickView" id="productsQuickView" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="products-image">
+                                <img src="{{ url_for('static', filename='assets/img/shop-img1.jpg') }}" alt="image">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-12">
+                            <div class="products-content">
+                                <h3>Pipe Cutters</h3>
+
+                                <div class="price">
+                                    <span class="new-price">$220.00</span>
+                                    <span class="old-price">$250.00</span>
+                                </div>
+
+                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+
+                                <form>
+                                    <div class="quantity">
+                                        <input type="number" name="quantity" id="quantity" min="1" value="1" title="Qty">
+                                    </div>
+                                    
+                                    <button type="submit">Add to Cart</button>
+                                </form>
+
+                                <div class="product-meta">
+                                    <span>Category: <a href="#">Pencil</a></span>
+                                    <span>Tag: <a href="#">Prints</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Produts Modal -->
+
+        <!-- Start Footer Area -->
+        <footer class="footer-area">
+            <div class="container">
+                <div class="subscribe-area">
+                    <h3>inscrivez vous à notre Newsletter</h3>
+
+                    <form class="newsletter-form" data-toggle="validator">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <input type="text" class="form-control" placeholder="Your Name" name="name" id="name">
+                            </div>
+
+                            <div class="col-lg-5 col-md-6">
+                                <input type="email" class="form-control" placeholder="Your Email" name="EMAIL" required autocomplete="off">
+                            </div>
+
+                            <div class="col-lg-3 col-md-12">
+                                <button type="submit">s'inscrire <i class="flaticon-paper-plane"></i></button>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12">
+                                <div id="validator-newsletter" class="form-result"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-footer-widget">
+                            <div class="logo">
+                                <a  href="{{ url_for('home.homepage') }}"><img src="assets/img/logo.png') }}" alt="logo" width="70px"></a>
+                                
+                            </div>
+                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p>
+                            <ul class="social">
+                                <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-footer-widget">
+                            <h3>Services</h3>
+
+                            <ul class="services-list">
+                                <li><a href="#">Home Maintenance</a></li>
+                                <li><a href="#">Plumbing</a></li>
+                                <li><a href="#">Cooling</a></li>
+                                <li><a href="#">Electrical</a></li>
+                                <li><a href="#">Painting</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-footer-widget">
+                            <h3>Contacts</h3>
+
+                            <ul class="footer-contact-list">
+                                <li><span>Address:</span> </li>
+                                <li><span>Email:</span> <a href="#">support@pinguard.com</a></li>
+                                <li><span>Phone:</span> <a href="#">+33624890443</a></li>
+                                <li><span>Fax:</span> <a href="#">+33624890443</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-footer-widget">
+                            <h3>Working Hours</h3>
+
+                            <ul class="working-hours">
+                                <li><span>Lundi-vendredi:</span> 7h - 18h</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-6">
+                            <p>Copyright 2019 <span>Pinguard</span>. All Rights Reserved.</p>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6">
+                            <ul>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer Area -->
+
+        <div class="go-top"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-up"></i></div>
+
+        <!-- jQuery Min JS -->
+        <script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+        <!-- Popper Min JS -->
+        <script src="{{ url_for('static', filename='assets/js/popper.min.js') }}"></script>
+        <!-- Bootstrap Min JS -->
+        <script src="{{ url_for('static', filename='assets/js/bootstrap.min.js') }}"></script>
+        <!-- Parallax Min JS -->
+        <script src="{{ url_for('static', filename='assets/js/parallax.min.js') }}"></script>
+        <!-- MeanMenu JS -->
+        <script src="{{ url_for('static', filename='assets/js/jquery.meanmenu.js') }}"></script>
+        <!-- Slick Min JS -->
+        <script src="{{ url_for('static', filename='assets/js/slick.min.js') }}"></script>
+        <!-- Owl Carousel Min JS -->
+        <script src="{{ url_for('static', filename='assets/js/owl.carousel.min.js') }}"></script>
+        <!-- MixItUp Min JS -->
+        <script src="{{ url_for('static', filename='assets/js/mixitup.min.js') }}"></script>
+        <!-- Odometer Min Js -->
+        <script src="{{ url_for('static', filename='assets/js/odometer.min.js') }}"></script>
+        <!-- Appear Min JS -->
+        <script src="{{ url_for('static', filename='assets/js/jquery.appear.min.js') }}"></script>
+        <!-- Magnific Popup Min JS -->
+        <script src="{{ url_for('static', filename='assets/js/jquery.magnific-popup.min.js') }}"></script>
+        <!-- Nice Select Min CSS -->
+        <script src="{{ url_for('static', filename='assets/js/jquery.nice-select.min.js') }}"></script>
+        <!-- AjaxChimp Min JS -->
+        <script src="{{ url_for('static', filename='assets/js/jquery.ajaxchimp.min.js') }}"></script>
+        <!-- Form Validator Min JS -->
+        <script src="{{ url_for('static', filename='assets/js/form-validator.min.js') }}"></script>
+        <!-- Contact Form Min JS -->
+        <script src="{{ url_for('static', filename='assets/js/contact-form-script.js') }}"></script>
+        <!-- Fennec Map JS -->
+        <script src="{{ url_for('static', filename='assets/js/fennec-map.js') }}"></script>
+        <!-- Main JS -->
+        <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+    </body>
+</html>

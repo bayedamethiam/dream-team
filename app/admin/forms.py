@@ -1,12 +1,35 @@
 # app/admin/forms.py
 
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
+from wtforms import StringField, SubmitField,SelectField
 from wtforms.validators import DataRequired
 
 from wtforms.ext.sqlalchemy.fields import QuerySelectField
 
 from ..models import Department, Role
+
+from ..models import Cil,Ticket,Cr,Equipement
+
+
+class ticketForm(FlaskForm):
+    """
+    Form for admin to add or edit a ticket
+    """
+    
+    titre = StringField('titre', validators=[DataRequired()])
+    nature = StringField('nature', validators=[DataRequired()])
+    categorie = StringField('categorie', validators=[DataRequired()])
+    sous_categorie = StringField('sous_categorie')
+    equipement = StringField('equipement', validators=[DataRequired()])
+    adresse = StringField('adresse', validators=[DataRequired()])
+    site = StringField('site', validators=[DataRequired()])
+    description = StringField('description', validators=[DataRequired()])
+    submit = SubmitField('Submit')
+
+class etatForm(FlaskForm):
+    statut=SelectField('statut', choices=['Non traité','Pris en charge','Intervention en cours','Gelé','Terminé','Validé'])
+    email=StringField('email', validators=[DataRequired()])
+    submit = SubmitField('Submit')
 
 
 class DepartmentForm(FlaskForm):
@@ -48,3 +71,4 @@ class EmployeeAssignForm(FlaskForm):
     role = QuerySelectField(query_factory=lambda: Role.query.all(),
                             get_label="name")
     submit = SubmitField('Submit')
+

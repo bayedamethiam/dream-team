@@ -1,0 +1,357 @@
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="zxx">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+        <meta http-equiv="refresh" content="20"> 
+        <!-- Bootstrap Min CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/bootstrap.min.css') }}">
+        <!-- Animate Min CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/animate.min.css') }}">
+        <!-- Owl Carousel Min CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/owl.carousel.min.css') }}">
+        <!-- FontAwesome Min CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/fontawesome.min.css') }}">
+        <!-- Flaticon CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/flaticon.css') }}">
+        <!-- Odometer Min CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/odometer.min.css') }}">
+        <!-- Magnific Popup Min CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/magnific-popup.min.css') }}">
+        <!-- MeanMenu CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/meanmenu.css') }}">
+        <!-- Nice Select Min CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/nice-select.min.css') }}">
+        <!-- Slick Min CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/slick.min.css') }}">
+        <!-- Slick Theme Min CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/slick-theme.min.css') }}">
+        <!-- Style CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}">
+        <!-- Responsive CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/responsive.css') }}">
+
+        <title>Pinguard</title>
+
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/img/favicon.png') }}">
+    </head>
+
+    <body>
+           <!-- Start Preloader Area -->
+           <div class="preloader">
+            <div class="loader">
+                <div class="icon">
+                    <i class="flaticon-help"></i>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <div class="icon">
+                    <i class="flaticon-settings"></i>
+                </div>
+            </div>
+        </div>
+        <!-- End Preloader Area -->
+
+        <!-- Start Header Area -->
+        <header class="header-area">
+            <div class="top-header">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5 col-md-12">
+                            <div class="top-header-content">
+                                <ul class="nav-list">
+                                    <li><a href="{{ url_for('static', filename='#') }}">à propos de nous</a></li>
+                                    <li><a href="{{ url_for('static', filename='#') }}">Career</a></li>
+                                    <li><a href="{{ url_for('static', filename='#') }}">FAQ's</a></li>
+                                </ul>
+    
+                                <ul class="social">
+                                    <li><a href="{{ url_for('static', filename='#') }}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="{{ url_for('static', filename='#') }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="{{ url_for('static', filename='#') }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="{{ url_for('static', filename='#') }}" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-7 col-md-12">
+                            <ul class="header-info">
+                                <li><i class="fas fa-map-marker-alt"></i> 2 peripherique henri wallon Paris </li>
+                                <li><i class="far fa-clock"></i> ouvert  8h-18h: lundi - vendredi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="middle-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-12">
+                            <div class="logo">
+                                <a class="center" href='index.html'><img src="{{ url_for('static', filename='assets/img/logo.png') }}" alt="image" width="50px"></a>
+                                <h2 class="heading">
+                                    <strong>P</strong>in<strong>G</strong>uard
+                                </h2>
+                            </div>
+                            
+                        </div>
+
+                        <div class="col-lg-9 col-md-12">
+                            <ul>
+                                <li>
+                                    <i class="flaticon-email"></i>
+                                    envoyez nous un email
+                                    <span>support@pinguard.com</span>
+                                </li>
+                                <li>
+                                    <i class="flaticon-phone"></i>
+                                    24/7 numero d'urgence
+                                    <span>+33624890443</span>
+                                </li>
+                                <li>
+                                    <a href="{{ url_for('static', filename='#') }}" class="btn btn-primary">Devis gratuit</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-area">
+                <div class="fennec-mobile-nav">
+                    <div class="logo">
+                        <a href='index.html'><img src="{{ url_for('static', filename='assets/img/logo.png') }}" alt="logo"></a>
+                    </div>
+                </div>
+    
+                <div class="fennec-nav">
+                    <div class="container">
+                        <nav class="navbar navbar-expand-md navbar-light">    
+                            <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item"><a href="{{ url_for('static', filename='#') }}" class="nav-link active">Home <i class="nav-link active"></i></a>
+                                   
+                                    </li>
+                                    
+                                    <li class="nav-item"><a href="{{ url_for('static', filename='#') }}" class="nav-link">à propos de nous <i class="flaticon-down-arrow"></i></a>
+                                       
+                                    </li>
+    
+                             
+    
+                                    <li class="nav-item"><a href="{{ url_for('static', filename='#') }}" class="nav-link">Client <i class="nav-link"></i></a>
+                                       
+                                    </li>
+    
+
+                                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                                </ul>
+
+                                <div class="others-option">
+                                    <div class="option-item"><i class="search-btn flaticon-search"></i>
+                                        <i class="close-btn fas fa-times"></i>
+                                        
+                                        <div class="search-overlay search-popup">
+                                            <div class='search-box'>
+                                                <form class="search-form">
+                                                    <input class="search-input" name="search" placeholder="Search" type="text">
+    
+                                                    <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- End Header Area -->
+
+
+
+
+
+
+
+        
+        <div>
+            {{ m | safe }}
+        </div>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <!-- Start Footer Area -->
+        <footer class="footer-area">
+            <div class="container">
+                <div class="subscribe-area">
+                    <h3>inscrivez vous à notre Newsletter</h3>
+
+                    <form class="newsletter-form" data-toggle="validator">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <input type="text" class="form-control" placeholder="Your Name" name="name" id="name">
+                            </div>
+
+                            <div class="col-lg-5 col-md-6">
+                                <input type="email" class="form-control" placeholder="Your Email" name="EMAIL" required autocomplete="off">
+                            </div>
+
+                            <div class="col-lg-3 col-md-12">
+                                <button type="submit">s'inscrire <i class="flaticon-paper-plane"></i></button>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12">
+                                <div id="validator-newsletter" class="form-result"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-footer-widget">
+                            <div class="logo">
+                                <a href="#"><img src="{{ url_for('static', filename='assets/img/logo.png') }}" alt="logo" width="70px"></a>
+                                
+                            </div>
+                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p>
+                            <ul class="social">
+                                <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-footer-widget">
+                            <h3>Services</h3>
+
+                            <ul class="services-list">
+                                <li><a href="#">Home Maintenance</a></li>
+                                <li><a href="#">Plumbing</a></li>
+                                <li><a href="#">Cooling</a></li>
+                                <li><a href="#">Electrical</a></li>
+                                <li><a href="#">Painting</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-footer-widget">
+                            <h3>Contacts</h3>
+
+                            <ul class="footer-contact-list">
+                                <li><span>Address:</span> </li>
+                                <li><span>Email:</span> <a href="#">support@pinguard.com</a></li>
+                                <li><span>Phone:</span> <a href="#">+33624890443</a></li>
+                                <li><span>Fax:</span> <a href="#">+33624890443</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-footer-widget">
+                            <h3>Working Hours</h3>
+
+                            <ul class="working-hours">
+                                <li><span>Lundi-vendredi:</span> 7h - 18h</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-6">
+                            <p>Copyright 2019 <span>Pinguard</span>. All Rights Reserved.</p>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6">
+                            <ul>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer Area -->
+
+        <div class="go-top"><i class="fas fa-arrow-up"></i><i class="fas fa-arrow-up"></i></div>
+
+        <!-- jQuery Min JS -->
+        <script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+        <!-- Popper Min JS -->
+        <script src="{{ url_for('static', filename='assets/js/popper.min.js') }}"></script>
+        <!-- Bootstrap Min JS -->
+        <script src="{{ url_for('static', filename='assets/js/bootstrap.min.js') }}"></script>
+        <!-- Parallax Min JS -->
+        <script src="{{ url_for('static', filename='assets/js/parallax.min.js') }}"></script>
+        <!-- MeanMenu JS -->
+        <script src="{{ url_for('static', filename='assets/js/jquery.meanmenu.js') }}"></script>
+        <!-- Slick Min JS -->
+        <script src="{{ url_for('static', filename='assets/js/slick.min.js') }}"></script>
+        <!-- Owl Carousel Min JS -->
+        <script src="{{ url_for('static', filename='assets/js/owl.carousel.min.js') }}"></script>
+        <!-- MixItUp Min JS -->
+        <script src="{{ url_for('static', filename='assets/js/mixitup.min.js') }}"></script>
+        <!-- Odometer Min Js -->
+        <script src="{{ url_for('static', filename='assets/js/odometer.min.js') }}"></script>
+        <!-- Appear Min JS -->
+        <script src="{{ url_for('static', filename='assets/js/jquery.appear.min.js') }}"></script>
+        <!-- Magnific Popup Min JS -->
+        <script src="{{ url_for('static', filename='assets/js/jquery.magnific-popup.min.js') }}"></script>
+        <!-- Nice Select Min CSS -->
+        <script src="{{ url_for('static', filename='assets/js/jquery.nice-select.min.js') }}"></script>
+        <!-- AjaxChimp Min JS -->
+        <script src="{{ url_for('static', filename='assets/js/jquery.ajaxchimp.min.js') }}"></script>
+        <!-- Form Validator Min JS -->
+        <script src="{{ url_for('static', filename='assets/js/form-validator.min.js') }}"></script>
+        <!-- Contact Form Min JS -->
+        <script src="{{ url_for('static', filename='assets/js/contact-form-script.js') }}"></script>
+        <!-- Fennec Map JS -->
+        <script src="{{ url_for('static', filename='assets/js/fennec-map.js') }}"></script>
+        <!-- Main JS -->
+        <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+    </body>
+</html>

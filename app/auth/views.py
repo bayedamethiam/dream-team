@@ -56,9 +56,9 @@ def login():
 
             # redirect to the appropriate dashboard page
             if employee.is_admin:
-                return redirect(url_for('home.admin_dashboard'))
+                return redirect(url_for('admin.list_tickets_etat'))
             else:
-                return redirect(url_for('home.dashboard'))
+                return redirect(url_for('admin.list_tickets'))
 
            
 
@@ -67,7 +67,7 @@ def login():
             flash('Invalid email or password.')
 
     # load login template
-    return render_template('auth/login.html', form=form, title='Login')
+    return render_template('auth/contact.html', form=form, title='Login')
 
 
 @auth.route('/logout')

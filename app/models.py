@@ -2,7 +2,7 @@
 
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
-
+from datetime import date,datetime
 from app import db, login_manager
 
 
@@ -87,3 +87,52 @@ class Role(db.Model):
 
     def __repr__(self):
         return '<Role: {}>'.format(self.name)
+
+
+class Ticket(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    id_cr = db.Column(db.Integer)
+    titre = db.Column(db.String(60))
+    nature = db.Column(db.String(60))
+    categorie = db.Column(db.String(60))
+    sous_categorie = db.Column(db.String(60))
+    equipement = db.Column(db.String(60))
+    adresse = db.Column(db.String(60))
+    lng=db.Column(db.Float)
+    la=db.Column(db.Float)
+    site = db.Column(db.String(60))
+    heure_creation = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
+    heure_arrive = db.Column(db.DateTime)
+    heure_gele = db.Column(db.DateTime)
+    heure_degele = db.Column(db.DateTime)
+    heure_retablissement = db.Column(db.DateTime)
+    heure_validation = db.Column(db.DateTime)
+    Entrepise = db.Column(db.String(60))
+    Entrepise1 = db.Column(db.String(60))
+    Entreprise2 = db.Column(db.String(60))
+    duree_demandé = db.Column(db.Float)
+    duree_realisé= db.Column(db.Float)
+    description = db.Column(db.Text)
+    statut = db.Column(db.String(60),default="Non traité")
+
+class Cr(db.Model):
+    id_cr = db.Column(db.Integer, primary_key=True)
+    lien = db.Column(db.Text)
+
+class Cil(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    nom = db.Column(db.String(60))
+    nb_technicien = db.Column(db.Integer)
+    ville = db.Column(db.String(60))
+    entreprise = db.Column(db.String(60))
+    adresse = db.Column(db.String(260))
+    longi = db.Column(db.Float)
+    lat = db.Column(db.Float)
+
+
+class Equipement(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    nom = db.Column(db.String(60))
+    cil_id = db.Column(db.Integer,db.ForeignKey('cil.id'))
+    quantite = db.Column(db.Float)
+    unité = db.Column(db.String(60))
