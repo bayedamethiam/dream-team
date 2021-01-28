@@ -16,11 +16,11 @@ login_manager = LoginManager()
 
 def create_app(config_name):
     if os.getenv('FLASK_CONFIG') == "production":
-        app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
-        #'postgresql://postgres:root@127.0.0.1:5432/postgres'
-        app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-        app.secret_key = 'lixdbflhjbv8867$$sdhjcbshjefvukquhs'
-     
+        app = Flask(__name__)
+        app.config.update(
+            SECRET_KEY=os.getenv('SECRET_KEY'),
+            SQLALCHEMY_DATABASE_URI=os.getenv('DATABASE_URL')
+        )
     else:
         app = Flask(__name__, instance_relative_config=True)
         app.config.from_object(app_config[config_name])
@@ -29,10 +29,8 @@ def create_app(config_name):
     
 
     Bootstrap(app)
-    #db.init_app(app)
-    migrate = Migrate()
-    migrate.init_app(app, db)
-    db.create_all()
+    db.init_app(app)
+    db.create_all
 
 
     login_manager.init_app(app)
