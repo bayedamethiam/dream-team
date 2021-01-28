@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
+  <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <meta charset="utf-8">
+  <!--************************************************ DEBUT BALISAGE STYLE ****************************************************-->
+  <style>
+    body {
+      padding: 5%;
+      font-family: Lato, sans-serif;
+    }
+
+    select {
+      width: 50%;
+    }
+
+
+    file-upload {
+      background-color: #ffffff;
+      width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+
+    .file-upload-content {
+      display: none;
+    }
+
+    .file-upload-input {
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      outline: none;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .image-upload-wrap {
+      margin-top: 20px;
+      border: 1px solid #1b2f68;
+      position: relative;
+    }
+
+
+    .image-title-wrap {
+      padding: 0 15px 15px 15px;
+      color: #222;
+    }
+
+
+    .file-upload-image {
+      max-height: 200px;
+      max-width: 200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .horaire_int {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .detail_panne {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .time {
+      margin-right: 20px;
+    }
+
+    .liste {
+      margin-right: 100px;
+      margin-left: 20px;
+    }
+  </style>
+
+  <!--************************************************ FIN BALISAGE STYLE ****************************************************-->
+</head>
+
+<!--************************************************ DEBUT BALISAGE BODY ****************************************************-->
+
+<body>
+
+
+
+  <h1>MAINTENANCE CORRECTIVE</h1>
+
+  <h3>Maintenance des Equipements Telecom</h3>
+
+  <p><i>Ce compte rendu à été rédigé pour l'intervention n°<strong>{{ticket.id}}</strong> de l'entreprise Phone Com</i>
+  </p>
+
+
+  <form action="{{ url_for('admin.cr_test',id=ticket.id)}}" method="POST">
+    <button type="submit" class="btn btn-info">Enregistrer le Compte Rendu</button>
+
+    <hr></br>
+
+    <h4>Technicien(s) Affecté(s)</h4>
+
+
+
+    <label class="card-title">Nom</label>
+    <input type="name" id="" name="Nom1" />
+
+    <label class="card-title mb-2 ">Specialisation</label>
+    <input type="Specialisation" id="" name="Specialisation1" />
+
+
+    <label class="card-title mb-2 ">Ataché à </label>
+    <input type="entreprise" id="" name="entreprise1" />
+
+
+    <label class="card-title mb-2 "> Nombre intervention</label>
+    <input type="Specialisation" id="" name="nb_intervention1" />
+
+
+    <label class="card-title mb-2 ">telephone</label>
+    <input type="Specialisation" id="" name="telephone1" />
+
+    <label class="card-title mb-2 ">Mail</label>
+    <input type="Specialisation" id="" name="mail1" />
+
+
+
+    <br>
+
+    <label class="card-title">Nom</label>
+    <input type="name" id="" name="Nom2" />
+
+    <label class="card-title mb-2 ">Specialisation</label>
+    <input type="Specialisation" id="" name="Specialisation2" />
+
+
+    <label class="card-title mb-2 ">Ataché a </label>
+    <input type="entreprise" id="" name="entreprise2" />
+
+
+    <label class="card-title mb-2 ">Nombre intervention</label>
+    <input type="Specialisation" id="" name="nb_intervention2" />
+
+
+    <label class="card-title mb-2 ">telephone</label>
+    <input type="Specialisation" id="" name="telephone2" />
+
+    <label class="card-title mb-2 ">Mail</label>
+    <input type="Specialisation" id="" name="mail2" />
+
+    <br>
+
+
+
+    <label class="card-title">Nom</label>
+    <input type="name" id="" name="Nom3" />
+
+    <label class="card-title mb-2 ">Specialisation</label>
+    <input type="Specialisation" id="" name="Specialisation3" />
+
+
+    <label class="card-title mb-2 ">Ataché a </label>
+    <input type="entreprise" id="" name="entreprise3" />
+
+
+    <label class="card-title mb-2 ">Nombre intervention</label>
+    <input type="Specialisation" id="" name="nb_intervention3" />
+
+
+    <label class="card-title mb-2 ">telephone</label>
+    <input type="Specialisation" id="" name="telephone3" />
+
+    <label class="card-title mb-2 ">Mail</label>
+    <input type="Specialisation" id="" name="mail3" />
+
+
+    <br>
+
+
+
+    <label class="card-title">Nom</label>
+    <input type="name" id="" name="Nom4" />
+
+    <label class="card-title mb-2 ">Specialisation</label>
+    <input type="Specialisation" id="" name="Specialisation4" />
+
+
+    <label class="card-title mb-2 ">Ataché a </label>
+    <input type="entreprise" id="" name="entreprise4" />
+
+
+    <label class="card-title mb-2 ">Nombre intervention</label>
+    <input type="Specialisation" id="" name="nb_intervention4" />
+
+
+    <label class="card-title mb-2 ">telephone</label>
+    <input type="Specialisation" id="" name="telephone4" />
+
+    <label class="card-title mb-2 ">Mail</label>
+    <input type="Specialisation" id="" name="mail4" />
+
+
+    <br>
+
+
+
+    <label class="card-title">Nom</label>
+    <input type="name" id="" name="Nom5" />
+
+    <label class="card-title mb-2 ">Specialisation</label>
+    <input type="Specialisation" id="" name="Specialisation5" />
+
+
+    <label class="card-title mb-2 ">Ataché a </label>
+    <input type="entreprise" id="" name="entreprise5" />
+
+
+    <label class="card-title mb-2 ">Nombre intervention</label>
+    <input type="Specialisation" id="" name="nb_intervention5" />
+
+
+    <label class="card-title mb-2 ">telephone</label>
+    <input type="Specialisation" id="" name="telephone5" />
+
+    <label class="card-title mb-2 ">Mail</label>
+    <input type="Specialisation" id="" name="mail5" />
+
+    </br>
+    </br>
+
+
+
+
+
+
+
+
+
+
+    </br></br>
+
+    <h4>Détails de la Panne</h4>
+    <hr>
+
+
+    <label>Nature Incident</label><br>
+    <input type="text" placeholder="Nature Incident" required name="nature">
+    <br>
+
+
+
+
+    <label>Technologie Concernée</label><br>
+    <select class="row mb-3 liste" id="dropdown" name="techno">
+      <option>ATM</option>
+      <option>DSL</option>
+      <option>BLR</option>
+      <option>SDH</option>
+      <option>RAD</option>
+      <option>WDM</option>
+      <option>FH</option>
+    </select>
+
+
+
+    <label>Constructeur Concerné</label><br>
+    <select class="row mb-3 liste" id="dropdown" name="constructeur">
+      <option>Alcatel</option>
+      <option>Nortel</option>
+      <option>Marconi</option>
+      <option>Huawei</option>
+      <option>RAD</option>
+      <option>Lucent</option>
+      <option>Nokia</option>
+    </select>
+
+
+
+
+
+    <label>Type équipement concerné</label><br>
+    <select class=" row mb-3 liste" id="dropdown" name="equipement">
+      <option>7270</option>
+      <option>ASX</option>
+      <option>9400UX/9600usy/9600LH</option>
+      <option>MA5300/MA5200</option>
+      <option>Metro (1000+1500+2500)</option>
+      <option>FSP2000</option>
+      <option>cherokee/wattpower</option>
+    </select>
+    <br>
+
+
+
+
+
+
+    <input type="text" placeholder="Raisons de la panne" required name="raison">
+
+    <input type="text" placeholder="Actions effectuées pour y remédier et pièces détachées utilisées" required name="solution">
+    
+  </form>
+
+
+  </br>
+  </br>
+  <h4>Ajouter des Photos et Documents</h4>
+  <hr>
+
+
+
+
+  </div>
+  </div>
+
+</body>
+
+<!--************************************************ FIN BALISAGE BODY ****************************************************-->
+
+</html>
+
+
+<!--************************************************ DEBUT BALISAGE SCRIPT ****************************************************-->
+<script>
+
+
+
+</script>

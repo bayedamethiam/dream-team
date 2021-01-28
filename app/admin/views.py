@@ -13,6 +13,10 @@ import smtplib
 from sqlalchemy import func
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+
+
+import pdfkit
+from flask import request
 # app/admin/views.py
 
 # update imports
@@ -671,7 +675,79 @@ def test():
     return "hello world"
 
 
+
+
+
+@admin.route('/cr/<int:id>', methods=['GET', 'POST'])
+@login_required
+def cr_test(id):
+
+  
+    ticket = Ticket.query.get_or_404(id)
+    if request.method == 'POST':
+
+        m = folium.Map(location=[46.795135, 2.587876],  zoom_start=6.4)
+        folium.Marker(
+                location=[ticket.la,ticket.lng],
+                popup=ticket.statut,
+                tooltip="Intervention",
+                icon=folium.Icon(color='red')
+            ).add_to(m)
+
+
+        nom1=request.form.get('Nom1')
+        specialisation1=request.form.get('Specialisation1')
+        nb_intervention1=request.form.get('nb_intervention1')
+        entreprise1=request.form.get('entreprise1')
+        telephone1=request.form.get('telephone1')
+        mail1=request.form.get('mail1')
+
+
+        nom2=request.form.get('Nom2')
+        specialisation2=request.form.get('Specialisation2')
+        nb_intervention2=request.form.get('nb_intervention2')
+        entreprise2=request.form.get('entreprise2')
+        telephone2=request.form.get('telephone2')
+        mail2=request.form.get('mail2')
+
+        nom3=request.form.get('Nom3')
+        specialisation3=request.form.get('Specialisation3')
+        nb_intervention3=request.form.get('nb_intervention3')
+        entreprise3=request.form.get('entreprise3')
+        telephone3=request.form.get('telephone3')
+        mail3=request.form.get('mail3')
+
+
+        techno=request.form.get('techno')
+        constructeur=request.form.get('constructeur')
+        equipement=request.form.get('equipement')
+        raison=request.form.get('raison')
+        solution=request.form.get('solution')
+        nature=request.form.get('nature')
+        
+        
+                   
+
+       
+        flash('You have successfully edited the Ticket.')
+
+        # redirect to the tickets page
+        return render_template('admin/cr.html',m=m._repr_html_(),nb_intervention3=nb_intervention3,nb_intervention1=nb_intervention1,nb_intervention2=nb_intervention2, nature=nature, telephone1=telephone1, telephone2=telephone2, telephone3=telephone3,  t0=ticket.heure_creation.time(),ticket=ticket,nom1=nom1,specialisation1=specialisation1,entreprise1=entreprise1,mail1=mail1,nom2=nom2,specialisation2=specialisation2,entreprise2=entreprise2,mail2=mail2,nom3=nom3,specialisation3=specialisation3,entreprise3=entreprise3,mail3=mail3,techno=techno,constructeur=constructeur,equipement=equipement,raison=raison,solution=solution)
+
+
+
+    #pdfkit.from_url('http://127.0.0.1:5000/admin/cr/','cr.pdf')
+
+    return render_template('admin/redaction_cr.html',  t0=ticket.heure_creation.time(),ticket=ticket)
+
+
             
+
+
+        
+            
+        
+
             
 
 
