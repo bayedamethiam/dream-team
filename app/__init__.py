@@ -29,7 +29,12 @@ def create_app(config_name):
     
 
     Bootstrap(app)
-    db.init_app(app)
+    #db.init_app(app)
+    db = SQLAlchemy(app)
+    migrate = Migrate()
+    migrate.init_app(app, db)
+    db.create_all()
+
    
 
 
