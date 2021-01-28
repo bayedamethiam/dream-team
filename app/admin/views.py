@@ -282,15 +282,19 @@ def list_tickets():
 
     tickets = Ticket.query.all()
 
-
-
+    nb_ticket=Ticket.objects.values('id').annotate(nb_ticket=Count('id'))
+    nb_ticket_cours=Ticket.objects.filter(statut="Intervention en cours").annotate(nb_ticket_cours=Count('id'))
+    nb_ticket_gelé=Ticket.objects.filter(statut="Gelé").annotate(nb_ticket_cours=Count('id'))
+    nb_ticket_termine=Ticket.objects.filter(statut="Terminé").annotate(nb_ticket_cours=Count('id'))
     
 
 
 
 
+
+
     return render_template('admin/tickets.html',
-                           tickets=tickets, title="Tickets" , nom=current_user.last_name)
+                           tickets=tickets, title="Tickets" , nom=current_user.last_name,nb_ticket=nb_ticket,nb_ticket_cours=nb_ticket_cours,nb_ticket_gelé=nb_ticket_gelé,nb_ticket_termine=nb_ticket_termine)
 
 
 
