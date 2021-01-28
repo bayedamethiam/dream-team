@@ -790,7 +790,7 @@ def cr_test(id):
 
         #pdf=pdfkit.from_string(html,False,configuration=pdfkit_config)
         #pdf = pdfkit.from_string(html, False,configuration=pdfkit_config)
-        pdf =pdfkit.from_url("www.google.com","test.pdf")
+        pdf =pdfkit.from_url("www.google.com","test.pdf",configuration=pdfkit_config)
         response = make_response(pdf)
         response.headers["Content-Type"] = "cr/pdf"
 
