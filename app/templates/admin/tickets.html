@@ -406,42 +406,42 @@
 
                                                     {% if ticket.statut == 'Non traité' %}
                                                     <td>
-                                                        <span class="badge-dot badge-brand mr-1"
+                                                        <span class="badge-dot badge-danger "
                                                             style="color: red;"></span>{{ ticket.statut }}
                                                     </td>
                                                     {% endif %}
 
                                                     {% if ticket.statut == 'Pris en charge' %}
                                                     <td>
-                                                        <span class="badge-dot badge-brand mr-1"></span>{{ ticket.statut
+                                                        <span class="badge-dot badge-secondary"></span>{{ ticket.statut
                                                         }}
                                                     </td>
                                                     {% endif %}
 
                                                     {% if ticket.statut == 'Intervention en cours' %}
                                                     <td>
-                                                        <span class="badge-dot badge-brand mr-1"></span>{{ ticket.statut
+                                                        <span class="badge-dot badge-warning"></span>{{ ticket.statut
                                                         }}
                                                     </td>
                                                     {% endif %}
 
                                                     {% if ticket.statut == 'Gelé' %}
                                                     <td>
-                                                        <span class="badge-dot badge-brand mr-1"></span>{{ ticket.statut
+                                                        <span class="badge-dot badge-dark"></span>{{ ticket.statut
                                                         }}
                                                     </td>
                                                     {% endif %}
 
                                                     {% if ticket.statut == 'Terminé'%}
                                                     <td>
-                                                        <span class="badge-dot badge-brand mr-1"></span>{{ ticket.statut
+                                                        <span class="badge-dot badge-success"></span>{{ ticket.statut
                                                         }}
                                                     </td>
                                                     {% endif %}
 
                                                     {% if ticket.statut == 'Validé'%}
                                                     <td>
-                                                        <span class="badge-dot badge-brand mr-1"></span>{{ ticket.statut
+                                                        <span class="badge-dot badge-brand mr-1 "></span>{{ ticket.statut
                                                         }}
                                                     </td>
                                                     {% endif %}
@@ -456,12 +456,18 @@
                                                             <i class="fa fa-trash"></i>
                                                         </a>
                                                     </td>
-
+                                                    
+                                                    
+                                                    {% if ticket.statut == 'Terminé'%}
                                                     <td>
                                                         <a href="">
                                                             <i class="fa fa-file"></i>
                                                         </a>
                                                     </td>
+                                                    {% endif %}
+
+
+                                                  
 
                                                 </tr>
                                                 {% endfor %}

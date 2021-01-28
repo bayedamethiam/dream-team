@@ -605,7 +605,7 @@ def map_ticket():
                     location=[cil.lat,cil.longi],
                     popup="<i>"+cil.nom+" "+ "Techniciens :"+str(cil.nb_technicien)+"</i>",
                     tooltip="CIL",
-                    icon=folium.Icon(prefix='fa', icon='exclamation',color='lightred')
+                    icon=folium.Icon(prefix='fa', icon='exclamation',color='purple')
                 ).add_to(m)
 
             else :
@@ -619,25 +619,62 @@ def map_ticket():
         
 
     #position des intervention
-    for ticket in tickets:
+      for ticket in tickets:
         
         if ticket.statut == "Non traité":
 
             folium.Marker(
                 location=[ticket.la,ticket.lng],
-                popup=ticket.statut,
+                popup="<i>Pas encore pris en charge </i>",
                 tooltip="Intervention",
                 icon=folium.Icon(color='red')
             ).add_to(m)
 
         else:
+            if ticket.statut == "Gelé":
+                folium.Marker(
+                location=[ticket.la,ticket.lng],
+                popup="<i>Ticket gelé </i>",
+                tooltip="Click here",
+                icon=folium.Icon(prefix='fa', icon='exclamation',color='black')
+                ).add_to(m)
 
-            folium.Marker(
-            location=[ticket.la,ticket.lng],
-            popup="<i>Intervention en cours </i>",
-            tooltip="Click here",
-            icon=folium.Icon(prefix='fa', icon='exclamation',color='orange')
-            ).add_to(m)
+            else:
+
+                if  ticket.statut == "Intervention en cours":
+                
+                    folium.Marker(
+                    location=[ticket.la,ticket.lng],
+                    popup="<i>Intervention en cours </i>",
+                    tooltip="Click here",
+                    icon=folium.Icon(prefix='fa', icon='exclamation',color='orange')
+                    ).add_to(m)
+
+                else:
+                    if ticket.statut == "Pris en charge":
+
+                        folium.Marker(
+                        location=[ticket.la,ticket.lng],
+                        popup="<i>Technicien en route</i>",
+                        tooltip="Click here",
+                        icon=folium.Icon(prefix='fa', icon='exclamation',color='lightred')
+                            ).add_to(m)
+
+                    else:
+
+                        if ticket.statut == "Terminé":
+                            folium.Marker(
+                                location=[ticket.la,ticket.lng],
+                                popup="<i>Intervention en cours </i>",
+                                tooltip="Click here",
+                                icon=folium.Icon(prefix='fa', icon='exclamation',color='green')
+                                ).add_to(m)
+
+
+
+
+
+            
             
 
 
