@@ -20,7 +20,7 @@ def create_app(config_name):
         #'postgresql://postgres:root@127.0.0.1:5432/postgres'
         app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
         app.secret_key = 'lixdbflhjbv8867$$sdhjcbshjefvukquhs'
-        )
+     
     else:
         app = Flask(__name__, instance_relative_config=True)
         app.config.from_object(app_config[config_name])
