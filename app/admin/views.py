@@ -672,7 +672,7 @@ def map_ticket():
                         if ticket.statut == "Terminé":
                             folium.Marker(
                                 location=[ticket.la,ticket.lng],
-                                popup="<i>Terminé </i>",
+                                popup="<i>Intervention en cours </i>",
                                 tooltip="Click here",
                                 icon=folium.Icon(prefix='fa', icon='exclamation',color='green')
                                 ).add_to(m)
@@ -813,18 +813,7 @@ def cr_display(id):
 
     return html
 
-
-
-@admin.route('/valider/<int:id>', methods=['GET', 'POST'])
-@login_required
-def valider(id):
-
-    ticket = Ticket.query.get_or_404(id)
-    ticket.statut="Validé"
-    db.session.commit()
-
-    return redirect(url_for('admin.list_tickets'))
-
+  
 
         
             
