@@ -457,8 +457,8 @@
                                                         </a>
                                                     </td>
                                                     
-                                                    
-                                                    {% if (ticket.statut == 'Terminé') & (ticket.id_cr is not None)%}
+                                                    {% if ticket.id_cr is not None %}
+                                                    {% if (ticket.statut == 'Terminé') %}
                                                     <td>
 
                                                         <a href="{{ url_for('admin.cr_display', id=ticket.id_cr) }}">
@@ -476,7 +476,8 @@
                                                     </td>
                                                     {% endif %}
 
-                                                  
+                                                    {% endif %}
+
 
                                                 </tr>
                                                 {% endfor %}
