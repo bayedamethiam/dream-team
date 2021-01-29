@@ -460,7 +460,7 @@
                                                     
                                                     {% if ticket.statut == 'Terminé'%}
                                                     <td>
-                                                        <a href="">
+                                                        <a href="{{ url_for('admin.cr_display', id=ticket.id_cr) }}">
                                                             <i class="fa fa-file"></i>
                                                         </a>
                                                     </td>
