@@ -49,7 +49,7 @@
                      ],
                     type: 'spline',
                     colors: {
-                         data1: '#5969ff',
+                        data1: '#5969ff',
                         data2: '#ff407b',
 
                     }
