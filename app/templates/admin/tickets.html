@@ -458,7 +458,7 @@
                                                     </td>
                                                     
                                                     
-                                                    {% if ticket.statut == 'Terminé' & ticket.id_cr is not None%}
+                                                    {% if (ticket.statut == 'Terminé') & (ticket.id_cr is not None)%}
                                                     <td>
 
                                                         <a href="{{ url_for('admin.cr_display', id=ticket.id_cr) }}">
@@ -468,7 +468,7 @@
                                                     {% endif %}
 
 
-                                                    {% if ticket.statut == 'Validé' & ticket.id_cr is not None%}
+                                                    {% if (ticket.statut == 'Validé') & (ticket.id_cr is not None)%}
                                                     <td>
                                                         <a href="{{ url_for('admin.cr_display', id=ticket.id_cr) }}">
                                                             <i class="fa fa-file"></i>
