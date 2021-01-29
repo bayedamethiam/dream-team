@@ -1,6 +1,5 @@
 # app/admin/views.py
 import googlemaps
-import os, sys, subprocess, platform
 from flask import abort, flash, redirect, render_template, url_for
 from flask_login import current_user, login_required
 from datetime import date,datetime
@@ -14,9 +13,7 @@ import smtplib
 from sqlalchemy import func
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from flask import make_response
-
-
+import os, sys, subprocess, platform
 import pdfkit
 from flask import request
 # app/admin/views.py
@@ -280,11 +277,12 @@ def assign_employee(id):
 @admin.route('/tickets', methods=['GET', 'POST'])
 @login_required
 def list_tickets():
-   
+    """
+    List all tickets
+    """
     
     
 
-   
     tickets = Ticket.query.all()
 
     nb_ticket=db.session.query(func.count(Ticket.id)).all()
@@ -299,8 +297,15 @@ def list_tickets():
     nb_ticket_terminé=db.session.query(func.count(Ticket.id)).filter(Ticket.statut.like("Terminé")).all()
     nb_ticket_terminé=str(nb_ticket_terminé[0]).replace("(","").replace(")","").replace(",","")
   
+  
+
+    
+
+
+
 
     return render_template('admin/tickets.html',tickets=tickets, title="Tickets" , nom=current_user.last_name,nb_ticket=nb_ticket,nb_ticket_cours=nb_ticket_cours,nb_ticket_gelé=nb_ticket_gelé,nb_ticket_terminé=nb_ticket_terminé)
+
 
 
 @admin.route('/tickets/admin', methods=['GET', 'POST'])
@@ -440,7 +445,7 @@ def edit_etat(id):
 
 
         msg = MIMEMultipart()
-        msg['From'] = 'pinguard.2021@gmail.com'
+        msg['From'] = 'pinguard.esigelec@gmail.com'
         msg['To'] = 'bayedame16@gmail.com'
         msg['Subject'] = 'Etat Ticket' 
         
@@ -459,8 +464,8 @@ def edit_etat(id):
             mailserver.ehlo()
             mailserver.starttls()
             mailserver.ehlo()
-            mailserver.login('pinguard.2021@gmail.com', 'Pinguard2021')
-            mailserver.sendmail('pinguard.2021@gmail.com', form.email.data, msg.as_string())
+            mailserver.login('pinguard.esigelec@gmail.com', 'Pinguard2021')
+            mailserver.sendmail('pinguard.esigelec@gmail.com', form.email.data, msg.as_string())
             mailserver.quit()
 
 
@@ -479,8 +484,8 @@ def edit_etat(id):
             mailserver.ehlo()
             mailserver.starttls()
             mailserver.ehlo()
-            mailserver.login('pinguard.2021@gmail.com', 'Pinguard2021')
-            mailserver.sendmail('pinguard.2021@gmail.com', form.email.data, msg.as_string())
+            mailserver.login('pinguard.esigelec@gmail.com', 'Pinguard2021')
+            mailserver.sendmail('pinguard.esigelec@gmail.com', form.email.data, msg.as_string())
             mailserver.quit()
 
 
@@ -494,8 +499,8 @@ def edit_etat(id):
             mailserver.ehlo()
             mailserver.starttls()
             mailserver.ehlo()
-            mailserver.login('pinguard.2021@gmail.com', 'Pinguard2021')
-            mailserver.sendmail('pinguard.2021@gmail.com', form.email.data, msg.as_string())
+            mailserver.login('pinguard.esigelec@gmail.com', 'Pinguard2021')
+            mailserver.sendmail('pinguard.esigelec@gmail.com', form.email.data, msg.as_string())
             mailserver.quit()
 
 
@@ -510,8 +515,8 @@ def edit_etat(id):
             mailserver.ehlo()
             mailserver.starttls()
             mailserver.ehlo()
-            mailserver.login('pinguard.2021@gmail.com', 'Pinguard2021')
-            mailserver.sendmail('pinguard.2021@gmail.com', form.email.data, msg.as_string())
+            mailserver.login('pinguard.esigelec@gmail.com', 'Pinguard2021')
+            mailserver.sendmail('pinguard.esigelec@gmail.com', form.email.data, msg.as_string())
             mailserver.quit()
 
 
@@ -524,8 +529,8 @@ def edit_etat(id):
             mailserver.ehlo()
             mailserver.starttls()
             mailserver.ehlo()
-            mailserver.login('pinguard.2021@gmail.com', 'Pinguard2021')
-            mailserver.sendmail('pinguard.2021@gmail.com', form.email.data, msg.as_string())
+            mailserver.login('pinguard.esigelec@gmail.com', 'Pinguard2021')
+            mailserver.sendmail('pinguard.esigelec@gmail.com', form.email.data, msg.as_string())
             mailserver.quit()
                                 
 
@@ -622,47 +627,44 @@ def map_ticket():
 
     #position des intervention
     for ticket in tickets:
-
+        
         if ticket.statut == "Non traité":
 
-
             folium.Marker(
-                    location=[ticket.la,ticket.lng],
-                    popup="<i>Pas encore pris en charge </i>",
-                    tooltip="Intervention",
-                    icon=folium.Icon(color='red')
-                ).add_to(m)
+                location=[ticket.la,ticket.lng],
+                popup="<i>Pas encore pris en charge </i>",
+                tooltip="Intervention",
+                icon=folium.Icon(color='red')
+            ).add_to(m)
 
         else:
-
             if ticket.statut == "Gelé":
-                olium.Marker(
-                    location=[ticket.la,ticket.lng],
-                    popup="<i>Ticket gelé </i>",
-                    tooltip="Click here",
-                    icon=folium.Icon(prefix='fa', icon='exclamation',color='black')
-                    ).add_to(m)
+                folium.Marker(
+                location=[ticket.la,ticket.lng],
+                popup="<i>Ticket gelé </i>",
+                tooltip="Click here",
+                icon=folium.Icon(prefix='fa', icon='exclamation',color='black')
+                ).add_to(m)
 
             else:
 
                 if  ticket.statut == "Intervention en cours":
-                        
+                
                     folium.Marker(
-                        location=[ticket.la,ticket.lng],
-                        popup="<i>Intervention en cours </i>",
-                        tooltip="Click here",
-                        icon=folium.Icon(prefix='fa', icon='exclamation',color='orange')
-                        ).add_to(m)
+                    location=[ticket.la,ticket.lng],
+                    popup="<i>Intervention en cours </i>",
+                    tooltip="Click here",
+                    icon=folium.Icon(prefix='fa', icon='exclamation',color='orange')
+                    ).add_to(m)
 
                 else:
-
                     if ticket.statut == "Pris en charge":
 
                         folium.Marker(
-                            location=[ticket.la,ticket.lng],
-                            popup="<i>Technicien en route</i>",
-                            tooltip="Click here",
-                            icon=folium.Icon(prefix='fa', icon='exclamation',color='lightred')
+                        location=[ticket.la,ticket.lng],
+                        popup="<i>Technicien en route</i>",
+                        tooltip="Click here",
+                        icon=folium.Icon(prefix='fa', icon='exclamation',color='lightred')
                             ).add_to(m)
 
                     else:
@@ -679,11 +681,17 @@ def map_ticket():
 
 
 
-            
-            
-
-
     return render_template('admin/map.html', m=m._repr_html_())
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -695,26 +703,6 @@ def change_etat():
 
    
     return render_template('basee.html')
-
-
-
-
-
-@admin.route('/test/', methods=['GET', 'POST'])
-@login_required
-def cil_test():
-
-    tickets = Ticket.query.all()
-   
-    return render_template('admin/cr.html')
-
-
-@admin.route('test//test/', methods=['GET', 'POST'])
-def test():
-
-
-   
-    return "hello world"
 
 
 
@@ -768,42 +756,44 @@ def cr_test(id):
         nature=request.form.get('nature')
         
         
-        
+                   
 
        
         flash('You have successfully edited the Ticket.')
 
         # redirect to the tickets page
         html = render_template('admin/cr.html',m=m._repr_html_(),nb_intervention3=nb_intervention3,nb_intervention1=nb_intervention1,nb_intervention2=nb_intervention2, nature=nature, telephone1=telephone1, telephone2=telephone2, telephone3=telephone3,  t0=ticket.heure_creation.time(),ticket=ticket,nom1=nom1,specialisation1=specialisation1,entreprise1=entreprise1,mail1=mail1,nom2=nom2,specialisation2=specialisation2,entreprise2=entreprise2,mail2=mail2,nom3=nom3,specialisation3=specialisation3,entreprise3=entreprise3,mail3=mail3,techno=techno,constructeur=constructeur,equipement=equipement,raison=raison,solution=solution)
-        
-        
+        """
         pdfkit_config=None
         if platform.system() == "Windows":
                 pdfkit_config = pdfkit.configuration(wkhtmltopdf=os.environ.get('WKHTMLTOPDF_BINARY', 'C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe'))
         else:
                 os.environ['PATH'] += os.pathsep + os.path.dirname(sys.executable) 
-                WKHTMLTOPDF_CMD = subprocess.Popen(['which', os.environ.get('WKHTMLTOPDF_BINARY', 'wkhtmltopdf-pack')], 
+                WKHTMLTOPDF_CMD = subprocess.Popen(['which', os.environ.get('WKHTMLTOPDF_BINARY', 'wkhtmltopdf')], 
                     stdout=subprocess.PIPE).communicate()[0].strip()
                 pdfkit_config = pdfkit.configuration(wkhtmltopdf=WKHTMLTOPDF_CMD)
         
-
-
-        Html_file= open("test.html","w")
-        Html_file.write(html)
-        Html_file.close()
+      
+        pdf=pdfkit.from_string(html,False,configuration=pdfkit_config)
+        pdf = pdfkit.from_string(html, False,configuration=pdfkit_config)
+        response = make_response(pdf)
+        response.headers["Content-Type"] = "cr/pdf"
+       
+        response.headers["Content-Disposition"] = "inline; filename=ticke.pdf"
+        """
+        cr=Cr(lien=html)
         
 
-
-
-
-        #pdf=pdfkit.from_file(Html_file,False,configuration=pdfkit_config)
-        #response = make_response(pdf)
-        #response.headers["Content-Type"] = "cr/pdf"
-        #Html_file.close()
-        #response.headers["Content-Disposition"] = "inline; filename=ticke.pdf"
-        return html
+        db.session.add(cr)
         
+       
+        
+        db.session.commit()
 
+        ticket.id_cr=cr.id_cr
+        db.session.commit()
+        return redirect(url_for('admin.list_tickets_etat'))
+        
 
 
     #pdfkit.from_url('http://127.0.0.1:5000/admin/cr/','cr.pdf')
@@ -811,16 +801,19 @@ def cr_test(id):
     return render_template('admin/redaction_cr.html',  t0=ticket.heure_creation.time(),ticket=ticket)
 
 
-            
 
-
-        
-            
-        
 
             
+@admin.route('/cr/display/<int:id>', methods=['GET', 'POST'])
+@login_required
+def cr_display(id):
 
+    cr = Cr.query.get_or_404(id)
+    html=cr.lien
 
+    return html
+
+  
 
         
             
