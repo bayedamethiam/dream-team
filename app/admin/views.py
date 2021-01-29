@@ -10,7 +10,7 @@ from ..models import Department, Role, Employee
 from ..models import Cil,Ticket,Cr,Equipement
 import folium
 import smtplib
-from sqlalchemy import func
+from sqlalchemy import func,desc
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import os, sys, subprocess, platform
