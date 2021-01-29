@@ -244,7 +244,7 @@
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item"><a href="#"
                                                     class="breadcrumb-link">Dashboard</a></li>
-                                            <li class="breadcrumb-item active" aria-current="page"> Pinguard - Phone-com
+                                            <li class="breadcrumb-item active" aria-current="page">E-Commerce Dashboard
                                                 Template</li>
                                         </ol>
                                     </nav>
@@ -340,6 +340,7 @@
                         <!-- end total orders  -->
                         <!-- ============================================================== -->
                     </div>
+
 
 
                     <div class="row">
@@ -440,7 +441,7 @@
 
                                                     {% if ticket.statut == 'Validé'%}
                                                     <td>
-                                                        <span class="badge-dot badge-brand mr-1 "></span>{{ ticket.statut
+                                                        <span class="badge-dot badge-info mr-1 "></span>{{ ticket.statut
                                                         }}
                                                     </td>
                                                     {% endif %}
@@ -459,12 +460,11 @@
                                                     
                                                     {% if ticket.statut == 'Terminé'%}
                                                     <td>
-                                                        <a href="{{ url_for('admin.cr_display', id=ticket.id_cr) }}">
+                                                        
                                                             <i class="fa fa-file"></i>
                                                         </a>
                                                     </td>
                                                     {% endif %}
-
 
                                                   
 
