@@ -283,7 +283,7 @@ def list_tickets():
     
     
 
-    tickets = Ticket.query.all()
+    tickets = Ticket.query.order_by(desc(Ticket.id)).all()
 
     nb_ticket=db.session.query(func.count(Ticket.id)).all()
     nb_ticket=str(nb_ticket[0]).replace("(","").replace(")","").replace(",","")
@@ -317,7 +317,7 @@ def list_tickets_etat():
     check_admin()
     
 
-    tickets = Ticket.query.all()
+    tickets=Ticket.query.order_by(desc(Ticket.id)).all()
 
     return render_template('admin/tickets/tickets_statut.html',
                            tickets=tickets, title="Tickets" , nom=current_user.last_name)
