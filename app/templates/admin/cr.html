@@ -96,8 +96,11 @@
   <p><i>Ce compte rendu à été rédigé pour l'intervention n°<strong>{{ticket.id}}</strong> de l'entreprise Phone Com</i></p>
 
 
+<form action="{{ url_for('admin.valider',id=ticket.id)}}" method="POST">
 
-  <button type="submit" class="btn btn-info">Enregistrer le Compte Rendu</button>
+  <button type="submit" class="btn btn-info">Valider le compte rendu</button>
+
+</form>
 
   <hr></br>
 
