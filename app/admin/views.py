@@ -836,4 +836,14 @@ def planning():
 
     return render_template('admin/planning.html')
 
+
+
+
+@admin.route('/dashboard', methods=['GET', 'POST'])
+@login_required
+def dashboard():
+
+
+    return render_template('admin/dashboard.html')
+
   

@@ -174,18 +174,20 @@
                             </li>
                             <li class="nav-item ">
 
-                                <a class="nav-link " href="{{ url_for('admin.dashboard') }}"><i class="fas fa-fw fa-chart-pie"></i>Dashboard <span
+                                <a class="nav-link active" href="{{ url_for('admin.dashboard') }}"><i class="fas fa-fw fa-chart-pie"></i>Dashboard <span
                                         class="badge badge-success">6</span></a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link active" href="{{ url_for('admin.list_tickets') }}"
+                                <a class="nav-link " href="{{ url_for('admin.list_tickets') }}"
                                     aria-expanded="false">
 
                                     <i class="fa fa-fw fa-rocket"> </i>Tickets</a>
                             </li>
+
+
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url_for('admin.planning') }}"><i class="fab fa-fw fa-wpforms"></i>Planning</a>
+                                <a class="nav-link " href="{{ url_for('admin.planning') }}"><i class="fab fa-fw fa-wpforms"></i>Planning</a>
                             </li>
                             
                             
@@ -225,288 +227,154 @@
         <div class="dashboard-wrapper">
             <div class="dashboard-ecommerce">
                 <div class="container-fluid dashboard-content ">
+  
+
+
+                    
+                <!-- ============================================================== -->
+                <!-- pageheader -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">Tableau de bord</h2>
+                            <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Charts</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">C3 Charts</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
                     <!-- ============================================================== -->
-                    <!-- pageheader  -->
+                    <!-- sales  -->
                     <!-- ============================================================== -->
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="page-header">
-                                <h2 class="pageheader-title">Tickets <a href="{{ url_for('admin.add_ticket') }}"
-                                        class="btn btn-default btn-lg">
-                                        <i class="fa fa-plus"></i> </a></h2>
 
-
-
-                                <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus
-                                    vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
-                                <div class="page-breadcrumb">
-                                    <nav aria-label="breadcrumb">
-                                        <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="#"
-                                                    class="breadcrumb-link">Dashboard</a></li>
-                                            <li class="breadcrumb-item active" aria-current="page">E-Commerce Dashboard
-                                                Template</li>
-                                        </ol>
-                                    </nav>
+                   
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                        <div class="card border-3 border-top border-top-primary">
+                            <div class="card-body">
+                                <h5 class="text-muted">Interventions</h5>
+                                <div class="metric-value d-inline-block">
+                                    <h1 class="mb-1">5043</h1>
+                                </div>
+                                <div
+                                    class="metric-label d-inline-block float-right text-success font-weight-bold">
+                                    <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i
+                                            class="fa fa-fw fa-arrow-up"></i></span><span
+                                        class="ml-1"></span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- ============================================================== -->
-                    <!-- end pageheader  -->
+                    <!-- end sales  -->
                     <!-- ============================================================== -->
-                    <div class="row">
-                        <!-- ============================================================== -->
-                        <!-- sales  -->
-                        <!-- ============================================================== -->
-
-
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
-                            <div class="card border-3 border-top border-top-primary">
-                                <div class="card-body">
-                                    <h5 class="text-muted">Tickets</h5>
-                                    <div class="metric-value d-inline-block">
-                                        <h1 class="mb-1">{{ nb_ticket }}</h1>
-                                    </div>
-                                    <div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                                        <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i
-                                                class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">5.86%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ============================================================== -->
-                        <!-- end sales  -->
-                        <!-- ============================================================== -->
-                        <!-- ============================================================== -->
-                        <!-- new customer  -->
-                        <!-- ============================================================== -->
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
-                            <div class="card border-3 border-top border-top-primary">
-                                <div class="card-body">
-                                    <h5 class="text-muted">Interventions en cours</h5>
-                                    <div class="metric-value d-inline-block">
-                                        <h1 class="mb-1">{{nb_ticket_cours}}</h1>
-                                    </div>
-                                    <div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                                        <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i
-                                                class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">10%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ============================================================== -->
-                        <!-- end new customer  -->
-                        <!-- ============================================================== -->
-                        <!-- ============================================================== -->
-                        <!-- visitor  -->
-                        <!-- ============================================================== -->
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
-                            <div class="card border-3 border-top border-top-primary">
-                                <div class="card-body">
-                                    <h5 class="text-muted">Tickets Gelé</h5>
-                                    <div class="metric-value d-inline-block">
-                                        <h1 class="mb-1">{{nb_ticket_gelé}}</h1>
-                                    </div>
-                                    <div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                                        <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i
-                                                class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">5%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ============================================================== -->
-                        <!-- end visitor  -->
-                        <!-- ============================================================== -->
-                        <!-- ============================================================== -->
-                        <!-- total orders  -->
-                        <!-- ============================================================== -->
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
-                            <div class="card border-3 border-top border-top-primary">
-                                <div class="card-body">
-                                    <h5 class="text-muted">Interventions terminé</h5>
-                                    <div class="metric-value d-inline-block">
-                                        <h1 class="mb-1">{{nb_ticket_terminé}}</h1>
-                                    </div>
-                                    <div class="metric-label d-inline-block float-right text-danger font-weight-bold">
-                                        <span
-                                            class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light "><i
-                                                class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">4%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ============================================================== -->
-                        <!-- end total orders  -->
-                        <!-- ============================================================== -->
-                    </div>
-
-
-
-                    <div class="row">
-
-                        <!-- ============================================================== -->
-                        <!-- ============================================================== -->
-                        <!-- customer acquistion  -->
-                        <!-- ============================================================== -->
-
-                        <!-- ============================================================== -->
-                        <!-- end customer acquistion  -->
-                        <!-- ============================================================== -->
-                    </div>
-
-
-
-
-
-                    <div class="row">
-                        <!-- ============================================================== -->
-
-                        <!-- ============================================================== -->
-
-                        <!-- recent orders  -->
-                        <!-- ============================================================== -->
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="card">
-                                <h5 class="card-header">Tickets</h5>
-                                <div class="card-body p-0">
-                                    <div class="table-responsive">
-                                        <table class="table">
-                                            <thead class="bg-light">
-                                                <tr class="border-0">
-
-                                                    <th width="15%"> Titre </th>
-                                                    <th width="15%"> Nature </th>
-                                                    <th width="15%"> Categorie </th>
-
-                                                    <th width="15%"> Equipement </th>
-                                                    <th width="15%"> Adresse </th>
-                                                    <th width="15%"> Site </th>
-                                                    <th width="15%"> Description </th>
-                                                    <th width="15%"> Etat </th>
-                                                    <th width="15%"> Modifier </th>
-                                                    <th width="15%"> Sup </th>
-
-                                                    <th width="15%"> Compte rendu </th>
-
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {% for ticket in tickets %}
-                                                <tr>
-                                                    <td> {{ ticket.titre }} </td>
-                                                    <td> {{ ticket.nature }} </td>
-                                                    <td> {{ ticket.categorie }} </td>
-
-                                                    <td> {{ ticket.equipement }} </td>
-                                                    <td> {{ ticket.adresse }} </td>
-                                                    <td> {{ ticket.site }} </td>
-                                                    <td> {{ ticket.description }} </td>
-
-
-                                                    {% if ticket.statut == 'Non traité' %}
-                                                    <td>
-                                                        <span class="badge-dot badge-danger "
-                                                            style="color: red;"></span>{{ ticket.statut }}
-                                                    </td>
-                                                    {% endif %}
-
-                                                    {% if ticket.statut == 'Pris en charge' %}
-                                                    <td>
-                                                        <span class="badge-dot badge-secondary"></span>{{ ticket.statut
-                                                        }}
-                                                    </td>
-                                                    {% endif %}
-
-                                                    {% if ticket.statut == 'Intervention en cours' %}
-                                                    <td>
-                                                        <span class="badge-dot badge-warning"></span>{{ ticket.statut
-                                                        }}
-                                                    </td>
-                                                    {% endif %}
-
-                                                    {% if ticket.statut == 'Gelé' %}
-                                                    <td>
-                                                        <span class="badge-dot badge-dark"></span>{{ ticket.statut
-                                                        }}
-                                                    </td>
-                                                    {% endif %}
-
-                                                    {% if ticket.statut == 'Terminé'%}
-                                                    <td>
-                                                        <span class="badge-dot badge-success"></span>{{ ticket.statut
-                                                        }}
-                                                    </td>
-                                                    {% endif %}
-
-                                                    {% if ticket.statut == 'Validé'%}
-                                                    <td>
-                                                        <span class="badge-dot badge-info mr-1 "></span>{{ ticket.statut
-                                                        }}
-                                                    </td>
-                                                    {% endif %}
-
-                                                    <td>
-                                                        <a href="{{ url_for('admin.edit_ticket', id=ticket.id) }}">
-                                                            <i class="fa fa-edit"></i>
-                                                        </a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="{{ url_for('admin.delete_ticket', id=ticket.id) }}">
-                                                            <i class="fa fa-trash"></i>
-                                                        </a>
-                                                    </td>
-                                                    
-                                                    {% if ticket.id_cr is not none %}
-                                                    {% if ticket.statut == 'Terminé' %}
-                                                    <td>
-
-                                                        <a href="{{ url_for('admin.cr_display', id=ticket.id_cr) }}">
-                                                            <i class="fa fa-file"></i>
-                                                        </a>
-                                                    </td>
-                                                    {% endif %}
-
-
-                                                    {% if ticket.statut == 'Validé' %}
-                                                    <td>
-                                                        <a href="{{ url_for('admin.cr_display', id=ticket.id_cr) }}">
-                                                            <i class="fa fa-file"></i>
-                                                        </a>
-                                                    </td>
-                                                    {% endif %}
-
-                                                    {% endif %}
-
-
-                                                </tr>
-                                                {% endfor %}
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ============================================================== -->
-                        <!-- end recent orders  -->
-
-
-
-                    </div>
-
-
-
-
                     <!-- ============================================================== -->
-                    <!-- end sales traffice country source  -->
+                    <!-- new customer  -->
+                    <!-- ============================================================== -->
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                        <div class="card border-3 border-top border-top-primary">
+                            <div class="card-body">
+                                <h5 class="text-muted">Interventions terrestres</h5>
+                                <div class="metric-value d-inline-block">
+                                    <h1 class="mb-1">1245</h1>
+                                </div>
+                                <div
+                                    class="metric-label d-inline-block float-right text-success font-weight-bold">
+                                    <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i
+                                            class="fa fa-fw fa-arrow-up"></i></span><span
+                                        class="ml-1">10%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end new customer  -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- visitor  -->
+                    <!-- ============================================================== -->
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                        <div class="card border-3 border-top border-top-primary">
+                            <div class="card-body">
+                                <h5 class="text-muted">Interventions aerien</h5>
+                                <div class="metric-value d-inline-block">
+                                    <h1 class="mb-1">1300</h1>
+                                </div>
+                                <div
+                                    class="metric-label d-inline-block float-right text-success font-weight-bold">
+                                    <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i
+                                            class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">5%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end visitor  -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- total orders  -->
+                    <!-- ============================================================== -->
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                        <div class="card border-3 border-top border-top-primary">
+                            <div class="card-body">
+                                <h5 class="text-muted">Interventions preventives</h5>
+                                <div class="metric-value d-inline-block">
+                                    <h1 class="mb-1">1340</h1>
+                                </div>
+                                <div
+                                    class="metric-label d-inline-block float-right text-danger font-weight-bold">
+                                    <span
+                                        class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light "><i
+                                            class="fa fa-fw fa-arrow-down"></i></span><span
+                                        class="ml-1">4%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end total orders  -->
                     <!-- ============================================================== -->
                 </div>
+
+                <!-- ============================================================== -->
+                <!-- end pageheader -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- ============================================================== -->
+                    <!--  area chart  -->
+                    <!-- ============================================================== -->
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Area Chart</h5>
+                            <div class="card-body">
+                                <div id="c3chart_area"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- end  spline chart  -->
+                <!-- ============================================================== -->
+               
+                <!-- ============================================================== -->
+                <!--  end scatter chart  -->
+                <!-- ============================================================== -->
+               
+                
             </div>
-        </div>
-    </div>
-    <!-- ============================================================== -->
-    <!-- footer -->
+            <!-- ============================================================== -->
+           <!-- footer -->
     <!-- ============================================================== -->
     <div class="footer">
         <div class="container-fluid">
@@ -559,6 +427,10 @@
     <script src="{{ url_for('static', filename='dashboard/assets/vendor/charts/c3charts/c3.min.js')}}"></script>
     <script src="{{ url_for('static', filename='dashboard/assets/vendor/charts/c3charts/d3-5.4.0.min.js')}}"></script>
     <script src="{{ url_for('static', filename='dashboard/assets/vendor/charts/c3charts/C3chartjs.js')}}"></script>
+
+                                                        
+
+
     <script src="{{ url_for('static', filename='dashboard/assets/libs/js/dashboard-ecommerce.js')}}"></script>
 </body>
 
