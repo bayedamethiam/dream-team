@@ -829,3 +829,11 @@ def valider(id):
         
             
         
+@admin.route('/planning', methods=['GET', 'POST'])
+@login_required
+def planning():
+
+
+    return render_template('admin/planning.html')
+
+  
