@@ -788,7 +788,7 @@ def cr_test(id):
         
 
 
-        Html_file= open("test.html","w")
+        Html_file= open("test.html","wr")
         Html_file.write(html)
         
 
