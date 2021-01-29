@@ -813,7 +813,18 @@ def cr_display(id):
 
     return html
 
-  
+
+
+@admin.route('/valider/<int:id>', methods=['GET', 'POST'])
+@login_required
+def valider(id):
+
+    ticket = Ticket.query.get_or_404(id)
+    ticket.statut="Validé"
+
+
+    return redirect(url_for('admin.list_tickets'))
+
 
         
             
