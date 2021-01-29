@@ -795,7 +795,7 @@ def cr_test(id):
 
 
 
-        pdf=pdfkit.from_file(Html_file),False,configuration=pdfkit_config)
+        pdf=pdfkit.from_file(Html_file,False,configuration=pdfkit_config)
         response = make_response(pdf)
         response.headers["Content-Type"] = "cr/pdf"
         Html_file.close()
