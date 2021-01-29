@@ -787,10 +787,18 @@ def cr_test(id):
                 pdfkit_config = pdfkit.configuration(wkhtmltopdf=WKHTMLTOPDF_CMD)
         
 
-        pdf=pdfkit.from_string(str(html),False,configuration=pdfkit_config)
+
+        Html_file= open("test.html","w")
+        Html_file.write(html)
+        
+
+
+
+
+        pdf=pdfkit.from_file(Html_file),False,configuration=pdfkit_config)
         response = make_response(pdf)
         response.headers["Content-Type"] = "cr/pdf"
-
+        Html_file.close()
         response.headers["Content-Disposition"] = "inline; filename=ticke.pdf"
         return html
         
